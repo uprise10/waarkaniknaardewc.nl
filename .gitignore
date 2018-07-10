@@ -1,0 +1,12 @@
+/_dump/
+
+/www/wp-config-local.php
+/www/wp-content/upgrade/
+/www/wp-content/cache/
+/www/wp-content/uploads
+/www/wp-content/wp-rocket-config
+/www/wp-content/mu-plugins/disable-plugins-when-doing-local-dev.php
+
+.sass-cache
+.DS_Store
+.idea
