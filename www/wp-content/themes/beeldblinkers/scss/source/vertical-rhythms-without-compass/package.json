@@ -1,0 +1,60 @@
+{
+  "_args": [
+    [
+      "vertical-rhythms-without-compass@github:emotion-nl/vertical-rhythms-without-compass",
+      "/Volumes/www/dev/winstuitjewoning"
+    ]
+  ],
+  "_from": "emotion-nl/vertical-rhythms-without-compass",
+  "_id": "vertical-rhythms-without-compass@1.0.1",
+  "_inCache": true,
+  "_location": "/vertical-rhythms-without-compass",
+  "_phantomChildren": {},
+  "_requested": {
+    "hosted": {
+      "directUrl": "https://raw.githubusercontent.com/emotion-nl/vertical-rhythms-without-compass/master/package.json",
+      "gitUrl": "git://github.com/emotion-nl/vertical-rhythms-without-compass.git",
+      "httpsUrl": "git+https://github.com/emotion-nl/vertical-rhythms-without-compass.git",
+      "shortcut": "github:emotion-nl/vertical-rhythms-without-compass",
+      "ssh": "git@github.com:emotion-nl/vertical-rhythms-without-compass.git",
+      "sshUrl": "git+ssh://git@github.com/emotion-nl/vertical-rhythms-without-compass.git",
+      "type": "github"
+    },
+    "name": "vertical-rhythms-without-compass",
+    "raw": "vertical-rhythms-without-compass@github:emotion-nl/vertical-rhythms-without-compass",
+    "rawSpec": "github:emotion-nl/vertical-rhythms-without-compass",
+    "scope": null,
+    "spec": "github:emotion-nl/vertical-rhythms-without-compass",
+    "type": "hosted"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "git://github.com/emotion-nl/vertical-rhythms-without-compass.git#85e6e315983af041cfd683a6bb5e8763497b8690",
+  "_shasum": "7c3bf1312bff64ad07e183ab94152b778a76be2e",
+  "_shrinkwrap": null,
+  "_spec": "vertical-rhythms-without-compass@github:emotion-nl/vertical-rhythms-without-compass",
+  "_where": "/Volumes/www/dev/winstuitjewoning",
+  "authors": [
+    "Zell Liew <zellwk@gmail.com>"
+  ],
+  "dependencies": {},
+  "description": "Compass Vertical Rhythms (Without Compass) ================================ This is a git repo for using Compass Vertical Rhythms (with Rem) without the Compass dependency. It's an unofficial port that will only be updated from time to time.",
+  "devDependencies": {},
+  "eyeglass": {
+    "needs": "^0.8.2"
+  },
+  "gitHead": "85e6e315983af041cfd683a6bb5e8763497b8690",
+  "homepage": "https://github.com/Emotion-nl/vertical-rhythms-without-compass",
+  "installable": true,
+  "license": "MIT",
+  "main": "vertical-rhythms/_vertical-rhythms.scss",
+  "name": "vertical-rhythms-without-compass",
+  "optionalDependencies": {},
+  "readme": "Compass Vertical Rhythms (Without Compass)\n================================\nThis is a git repo for using Compass Vertical Rhythms (with Rem) without the Compass dependency. It's an unofficial port that will only be updated from time to time.\n\n### DOCUMENTATION:\nCheck out Compass Beta for docs on how to use this vertical rhythms.\nhttp://beta.compass-style.org/reference/compass/typography/vertical_rhythm/",
+  "readmeFilename": "README.md",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.1"
+}

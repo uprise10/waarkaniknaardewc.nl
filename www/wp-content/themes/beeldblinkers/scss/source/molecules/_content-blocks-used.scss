@@ -1,0 +1,1339 @@
+.block {
+  display: block;
+  position: relative;
+
+  @include padding-top(3);
+  @include padding-bottom(1.5);
+  @include margin-top(0);
+
+  //@include padding-left(1);
+  //@include padding-right(1);
+
+  clear: both;
+
+  @include susy-breakpoint($breakpoint-large, $susy-large) {
+    @include padding-left(1);
+    @include padding-right(1);
+  }
+
+
+  &.bg-black {
+    background-color: palette(black,base);
+  }
+
+
+  &.bg-grey {
+    background-color: palette(grey, bg);
+    @include padding-top(4);
+    @include padding-bottom(3);
+    @include margin-top(0);
+    @include margin-bottom(0);
+  }
+
+  &.footer_block {
+    @include padding-top(3);
+    @include padding-bottom(3);
+  }
+
+  .person {
+    font-family: $font-family-bold;
+    //font-weight: bold;
+    overflow: hidden;
+    @include line-height(2);
+
+    @include rem('font-size', ms(1));
+
+    //text-align: right;
+
+    //@include padding-bottom(0);
+    //@include margin-top(0);
+    //@include margin-bottom(0);
+
+    @include susy-breakpoint($breakpoint-large, $susy-large) {
+      @include line-height(1);
+    }
+    span {
+      font-family: $font-family;
+      //font-family: $font-family;
+      //font-weight: 400;
+      //color: palette(blue, base);
+      //color: palette(green, base);
+    }
+    @at-root .block.quote_sameheight-img .content .text.grey {
+      .person {
+        color: palette(green, base);
+      }
+      blockquote {
+        &:after {
+          background-image: url("/wp-content/themes/beeldblinkers/img/quote_groen.svg");
+        }
+      }
+    }
+  }
+
+
+  .inner {
+    //@include clearfix();
+    @include padding-right(1);
+    @include padding-left(1);
+    @include susy-breakpoint($breakpoint-large, $susy-large) {
+      @include padding-right(0);
+      @include padding-left(0);
+    }
+
+  }
+
+  .footer {
+    display: block;
+    clear: both;
+    text-align: center;
+    padding-left: span(1);
+    padding-right: span(1);
+    @include padding-top(2);
+    @include padding-bottom(0);
+    @include susy-breakpoint($breakpoint-large, $susy-large) {
+      padding-left: span(1);
+      padding-right: span(1);
+    }
+  }
+
+  .intro {
+    display: block;
+    clear: both;
+    text-align: center;
+    @include padding-bottom(2);
+    h1, h2, h3 {
+      position: relative;
+      letter-spacing: -1px;
+      @include margin-bottom(0);
+      //+p {
+      //  @include margin-top(-1);
+      //}
+      span {
+        color: palette(blue,base);
+      }
+      //&:after {
+      //  content: ' ';
+      //  position: absolute;
+      //  @include line-width(9);
+      //  left: -50%;
+      //  right: -50%;
+      //  bottom: 0;
+      //  margin-left: auto;
+      //  margin-right: auto;
+      //  border: 1px solid palette(grey, bg);
+      //  @at-root .block.bg-grey {
+      //    h1, h2, h3 {
+      //      &:after {
+      //        border: 1px solid palette(white, base);
+      //      }
+      //    }
+      //  }
+      //}
+    }
+    //overflow: hidden;
+    @include susy-breakpoint($breakpoint-large, $susy-large) {
+      //@include span(10);
+      //@include prefix(2);
+      padding-left: span(1);
+      padding-right: span(1);
+    }
+  }
+
+  &.text_center {
+    .content {
+      text-align: center;
+      p {
+        //@include rem('font-size', ms(3));
+        @include set-font-size-variant(large);
+        @include custom-line-height(1.25);
+      }
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+        margin-left: span(2);
+        margin-right: span(2);
+        //@include span(10);
+        //@include prefix(2);
+      }
+    }
+    &.small {
+      .content {
+        p {
+          @include rem('font-size', ms(1));
+        }
+      }
+    }
+
+  }
+
+
+
+  .nieuws_info {
+    p {
+      display: inline-block;
+      @include margin-left(-1.5);
+      @include margin-bottom(1);
+      @include padding-left(1.5);
+      @include padding-right(1.5);
+      @include rhythm-padding(.25);
+      @include rem('font-size', ms(-1));
+      width: auto;
+      background-color: palette(white, base);
+    }
+  }
+
+  &.nieuws {
+    display: block;
+    position: relative;
+    clear: both;
+    @include rhythm-padding(4);
+    overflow: hidden;
+
+    .laatste-nieuws {
+      clear: both;
+      .button_wrap {
+        text-align: center;
+      }
+      .item {
+        position: relative;
+        background-color: #ebebeb;
+        @include rhythm-padding(1.5);
+        @include padding-right(1.5);
+        @include padding-left(1.5);
+        overflow: hidden;
+        text-align: left;
+        @include margin-bottom(1);
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          @include span(6 inside no-gutter);
+        }
+        &:nth-of-type(2n) {
+          background-color: #f1f1f1;
+          @include susy-breakpoint($breakpoint-large, $susy-large) {
+            @include span(6 last inside no-gutter);
+            border-left:1px solid white;
+          }
+        }
+        .item-wrap {
+          display: block;
+          position: relative;
+          min-height: rhythm(4);
+        }
+        h2 {
+          @include margin-bottom(.5);
+          @include custom-line-height(1);
+          font-family: $font-family;
+          font-weight:bold;
+          @include rem('font-size', ms(0));
+          color: palette(blue,base);
+        }
+        h2+p {
+          @include margin-top(0);
+        }
+        .leesmeer {
+          font-family: $font-family;
+          @include rem('font-size', ms(-1));
+          color: palette(yellow,base);
+        }
+      }
+      &.item_count_1 {
+        .item {
+          @include susy-breakpoint($breakpoint-large, $susy-large) {
+            @include span(12);
+          }
+        }
+      }
+      &.item_count_3 {
+        .item {
+          &:nth-of-type(1), &:nth-of-type(2) {
+            margin-bottom: 1px;
+          }
+          &:nth-of-type(3) {
+            @include susy-breakpoint($breakpoint-large, $susy-large) {
+              @include span(12);
+            }
+          }
+        }
+      }
+      &.item_count_4 {
+        .item {
+          &:nth-of-type(1), &:nth-of-type(2) {
+            margin-bottom: 1px;
+          }
+        }
+      }
+    }
+    
+  }
+
+  &.nieuws_detail, &.nieuws_overzicht {
+    display: block;
+    position: relative;
+    clear: both;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+
+    @include susy-breakpoint($breakpoint-large, $susy-large) {
+      @include span(12);
+    }
+
+    .nieuws_content {
+      clear: both;
+
+      .item {
+        position: relative;
+        background-color: palette(grey, base);
+        @include rhythm-padding(1.5);
+        @include padding-right(1.5);
+        @include padding-left(1.5);
+        overflow: hidden;
+        @include margin-bottom(.5);
+
+        &:first-of-type {
+          &:after {
+            position: absolute;
+            content: ' ';
+            top: auto;
+            height: 1px;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            border-bottom: 1px solid palette(white, base);
+            @include susy-breakpoint($breakpoint-large, $susy-large) {
+              border-right: 1px solid palette(white, base);
+              border-bottom: none;
+              top: 0;
+              height: 100%;
+              width: 1px;
+              left: auto;
+            }
+          }
+        }
+
+        h2 {
+          @include margin-bottom(.5);
+          @include rem('font-size', ms(5));
+          @include custom-line-height(1.5);
+        }
+        h2+p {
+          @include margin-top(.5);
+        }
+
+      }
+
+    }
+  }
+
+
+
+
+  &.text_half {
+    @include susy-breakpoint($breakpoint-large, $susy-large) {
+      @include span(6);
+    }
+  }
+
+  &.info_block {
+    .content {
+      position: relative;
+      background-color: palette(grey, bg);
+      @include clearfix();
+      @include padding-left(2);
+      @include padding-right(2);
+      @include rhythm-padding(2);
+
+      @include custom-border-radius(14,14,0,14);
+
+      overflow: hidden;
+      .text {
+        h2 {
+          @include set-font-size-variant(xxlarge);
+          //@include custom-line-height(1.5);
+          color: palette(blue, base);
+          @include margin-bottom(.5);
+          @include susy-breakpoint($breakpoint-large, $susy-large) {
+            @include custom-line-height(1);
+            @include set-font-size-variant(xxxlarge);
+          }
+        }
+        p {
+          //@include set-font-size-variant(large);
+          //@include rem('font-size', ms(2));
+          @include margin-top(.5);
+        }
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          @include span(8);
+        }
+      }
+      .image {
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          position: absolute;
+          @include span(4 last);
+          top: 0;
+          right: 0;
+          bottom: 0;
+          text-align: right;
+          overflow: hidden;
+          img {
+            display: block;
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            object-position: bottom right;
+          }
+        }
+      }
+    }
+  }
+
+
+  &.info_fullwidth {
+
+    .cover_img {
+      position: absolute;
+      top:0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: no-repeat center center;
+      background-size: cover;
+    }
+    .content {
+      position: relative;
+      @include rhythm-padding(2);
+      overflow: hidden;
+      .colom {
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          @include span(6);
+          &:first-of-type {
+            @include padding-right(1);
+          }
+          &:last-of-type {
+            @include padding-left(1);
+            @include span(6 last);
+          }
+        }
+      }
+      h1 {
+        @include padding-bottom(1.5);
+
+        @include rem('font-size', ms(10));
+        @include custom-line-height(2);
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          //@include rem('font-size', ms(15));
+          //@include custom-line-height(3.25);
+          @include rem('font-size', ms(12));
+          @include custom-line-height(2.5);
+        }
+      }
+      h1,h2,h3,h4,h5,h6,p {
+        color: palette(white);
+      }
+      h2,h3 {
+        @include padding-bottom(0);
+        @include margin-bottom(0);
+      }
+      h1+p, h2+p, h3+p {
+        @include margin-top(0);
+        @include padding-top(0);
+      }
+      p {
+        //@include rem('font-size', ms(2));
+        @include margin-top(0);
+        @include padding-top(0);
+        @include padding-bottom(.5);
+        @include margin-bottom(0);
+      }
+      a.button {
+        @include margin-top(.5);
+        color: palette(white,base);
+        &:after {
+          border-color: palette(white,base);
+        }
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          &:hover {
+            &:after {
+              border-color: palette(yellow,base);
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+
+
+
+
+  &.newsletter {
+    overflow: hidden;
+    background-color: palette(yellow,base);
+    //.trein_foto {
+    //    display: block;
+    //    position: absolute;
+    //    @include absolute-right(2);
+    //    bottom: 0;
+    //    img {
+    //      display: block;
+    //    }
+    //  @include susy-breakpoint($breakpoint-large, $susy-large) {
+    //    right: auto;
+    //    @include absolute-left(-18);
+    //  }
+    //  img {
+    //    @include line-height(7);
+    //    width: auto;
+    //  }
+    //}
+    .content {
+      position: relative;
+      text-align: center;
+      padding-left: span(1);
+      padding-right: span(1);
+      @include rhythm-padding(0);
+      @include margin-bottom(2);
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+        padding-left: span(1.5);
+        padding-right: span(1.5);
+      }
+
+      h1,h2 {
+        //@include set-font-size-variant(xxxlarge);
+        @include rem('font-size', ms(4));
+        @include custom-line-height(1.5);
+        @include padding-bottom(0);
+        color: white;
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          @include rem('font-size', ms(6));
+        }
+      }
+      p {
+        color: white;
+        @include padding-bottom(0);
+      }
+
+      .subscribe {
+        display: block;
+        overflow: hidden;
+        input[type=text], input[type=email] {
+          display: inline-block;
+          @include custom-border-radius(3,3,3,3);
+          @include margin-bottom(.5);
+          @include susy-breakpoint($breakpoint-large, $susy-large) {
+            @include span(10);
+            @include push(1);
+          }
+        }
+        input[type=submit], button[type=submit] {
+          display: inline-block;
+          border:1px solid white;
+          @include margin-top(1);
+          @include susy-breakpoint($breakpoint-large, $susy-large) {
+            @include span(4);
+            @include push(4);
+            clear: both;
+          }
+        }
+      }
+
+    }
+
+  }
+
+  &.title_block {
+    background-color: palette(green,base);
+    @include padding-top(3);
+    @include padding-bottom(2);
+    @include margin-top(0);
+
+    .content {
+      text-align: center;
+      h1, p {
+        color: palette(white,base);
+      }
+      h1 {
+        @include margin-bottom(0);
+      }
+      p {
+        @include margin-top(0);
+      }
+    }
+
+  }
+
+
+  &.article_block {
+
+    //@include padding-top(1);
+    //@include padding-bottom(1);
+    //@include margin-top(0);
+
+    .inner {
+
+      .content {
+
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          margin-left: span(2 wide);
+          margin-right: span(2 wide);
+        }
+
+        @at-root .article_block.full {
+
+          .inner .content {
+            @include susy-breakpoint($breakpoint-large, $susy-large) {
+              margin-left: 0;
+              margin-right: 0;
+            }
+          }
+
+          .col_2 {
+            @include susy-breakpoint($breakpoint-large, $susy-large) {
+            @include span(6);
+              &.last {
+                @include span(6 last);
+              }
+            }
+          }
+          .col_3 {
+            @include susy-breakpoint($breakpoint-large, $susy-large) {
+              @include span(4);
+              &.last {
+                @include span(4 last);
+              }
+            }
+          }
+
+        }
+
+      }
+    }
+  }
+
+  .article {
+
+    a {
+      &:not(.button) {
+        color: palette(green,base);
+      }
+      
+      text-decoration: none;
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+       &:hover {
+         text-decoration: underline;
+       }
+      }
+    }
+
+    blockquote {
+      position: relative;
+      @include padding-left(2.5);
+      margin-left: 0;
+      margin-right: 0;
+      @include margin-top(2);
+      @include margin-bottom(2);
+      @include padding-top(0);
+
+      @include set-font-size-variant(xlarge);
+      @include custom-line-height(1.5);
+      color: palette(blue,base);
+
+      &:after {
+        content: ' ';
+        @include line-width(3);
+        @include line-height(1.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url("/wp-content/themes/beeldblinkers/img/quote_groen.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+
+    .info_footer {
+      text-align: left;
+      @include margin-top(2);
+      .button {
+        color: palette(white,base);
+        border-radius: 0;
+        @include padding-left(.75);
+        @include padding-right(.75);
+        font-family: $font-family;
+      }
+
+    }
+
+  }
+
+
+
+
+  &.netwerk_block {
+
+    @include rhythm-padding(4);
+
+    .inner {
+
+      .content {
+        
+        .intro {
+          h1 {
+            color: palette(blue,base);
+          }
+        }
+
+        .netwerk {
+          .item {
+            display: block;
+            position: relative;
+            @include line-height(5);
+            @include margin-bottom(2);
+            clear: both;
+            overflow: hidden;
+            background-color: palette(grey,bg);
+
+            .data-bg-white {
+              @include susy-breakpoint($breakpoint-large, $susy-large) {
+                position: absolute;
+                top: 0;
+                left: 20px;
+                bottom:0;
+                background-color: palette(white,base);
+                z-index: 2;
+                width: 125px;
+              }
+            }
+
+            .data {
+              position: absolute;
+              width: 80px;
+              top: 0;
+              left: 0;
+              bottom:0;
+              text-align: center;
+              z-index: 2;
+              @include susy-breakpoint($breakpoint-large, $susy-large) {
+                background-color: palette(blue,base);
+                width: 125px;
+              }
+              .day-month-year {
+                display: block;
+                @include centerer();
+                z-index: 1;
+                .day {
+                  @include rem('font-size', ms(10));
+                  font-family: $font-family-headings;
+                  font-weight:bold;
+                  @include custom-line-height(2);
+                  @include susy-breakpoint($breakpoint-large, $susy-large) {
+                    @include rem('font-size', ms(12));
+                    color: palette(white, base);
+                  }
+                }
+                .month-year {
+                  color: palette(yellow, base);
+                  font-weight: bold;
+                  @include rem('font-size', ms(-1));
+                  @include susy-breakpoint($breakpoint-large, $susy-large) {
+                    @include rem('font-size', ms(0));
+                  }
+                }
+                .month {
+                }
+                .year {
+                }
+              }
+
+              @include susy-breakpoint($breakpoint-large, $susy-large) {
+                &:after, &:before {
+                  content: ' ';
+                  display: block;
+                  position: absolute;
+                  width: 0;
+                  height: 0;
+                  border-top: 60px solid transparent;
+                  border-bottom: 60px solid transparent;
+                  z-index: 0;
+                  right: 0;
+                  z-index: 0;
+                }
+                &:after {
+                  margin-right: -30px;
+                  border-left: 30px solid palette(blue, base);
+                }
+                &:before {
+                  margin-right: -50px;
+                  border-left: 30px solid palette(white, base);
+                }
+              }
+
+            }
+
+            .info-wrap {
+              position: relative;
+              padding-left: 80px;
+              @include susy-breakpoint($breakpoint-large, $susy-large) {
+                left: 125px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+              }
+              .text {
+                display: block;
+                @include padding-top(1);
+                @include padding-left(0);
+                @include susy-breakpoint($breakpoint-large, $susy-large) {
+                  @include line-height(4);
+                  @include padding-left(2);
+                  @include padding-top(1);
+                  max-width: 70%;
+                  float: left;
+                }
+                p {
+                  @include rem('font-size', ms(0));
+                  margin: 0;
+                }
+                a {
+                  color: palette(green, base);
+                }
+              }
+              .button-wrap {
+
+                display: block;
+                @include padding-left(0);
+                @include susy-breakpoint($breakpoint-large, $susy-large) {
+                  float: right;
+                  @include padding-left(0);
+                  @include line-height(5);
+                }
+                .button {
+                  @include margin-right(1);
+                  @include margin-top(.5);
+                  margin-bottom: 0;
+                  padding-left: 0;
+                  padding-top: 0;
+                  margin-top: 0;
+                  @include susy-breakpoint($breakpoint-large, $susy-large) {
+                    @include margin-top(1.5);
+                    //@include padding-left(1.5);
+                    //@include padding-top(0.25);
+
+                    @include padding-top(0.5);
+                    @include padding-right(1.5);
+                    @include padding-bottom(0.5);
+                    @include padding-left(1.5);
+
+                    margin-top: 0;
+                  }
+                  &:after {
+                    content: normal;
+                    @include susy-breakpoint($breakpoint-large, $susy-large) {
+                      content: ' ';
+                    }
+                  }
+                }
+              }
+
+            }
+
+          }
+        }
+
+      }
+
+    }
+  }
+
+
+  &.partner_detail {
+
+    .inner {
+
+      .person_image {
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          @include span(4);
+        }
+      }
+
+      .content {
+        h1,h2,h3,h4,h5,h6 {
+          color: palette(blue,base);
+        }
+        h2+p,h3+p,h4+p,h5+p,h6+p {
+          @include margin-top(-1);
+        }
+        p.worktype {
+          padding-top: 0;
+          margin-top: 0;
+          color: palette(green,base);
+        }
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          @include span(8 last);
+        }
+
+        .info_contact {
+          .form {
+            @include susy-breakpoint($breakpoint-large, $susy-large) {
+              padding-right: span(3 of 8);
+            }
+          }
+        }
+
+      }
+
+    }
+  }
+
+
+  &.contact_block {
+
+    color: palette(grey,text);
+
+    //background-color: palette(blue,base);
+
+    h1,h2,h3,h4,h5,h6 {
+      //color: palette(yellow,base);
+    }
+
+    .form {
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+        @include span(6);
+      }
+    }
+    .text {
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+        @include span(6 last);
+      }
+      h1,h2,h3,h4,h5,h6 {
+        @include margin-bottom(.5);
+      }
+    }
+
+    .row {
+      //display: block;
+      //@include rhythm-padding(2);
+      @include padding-top(2);
+      @include padding-left(1);
+      @include padding-right(1);
+      //background-color: palette(white,base);
+      overflow: hidden;
+      //@include margin-bottom(1);
+    }
+
+
+  }
+
+  &.form_block {
+
+    .content {
+      background-color: palette(white,base);
+      text-align: center;
+      @include padding-top(3);
+      @include padding-bottom(1);
+      @include padding-left(1);
+      @include padding-right(1);
+      overflow: hidden;
+
+      box-shadow: 0px 0px 50px 7px palette(grey, bgwidgetdate);
+
+      h1,h2,h3 {
+        color: palette(blue,base);
+        @include rem('font-size', ms(3));
+        margin-bottom: 0;
+      }
+      p.medium {
+        @include rem('font-size', ms(1));
+        margin-top: 0;
+      }
+      form {
+        text-align: left;
+      }
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+        margin-left: span(2);
+        margin-right: span(2);
+        @include padding-left(0);
+        @include padding-right(0);
+        .form {
+          margin-left: span(2);
+          margin-right: span(2);
+        }
+      }
+    }
+
+
+  }
+
+
+  //&.quote_sameheight-img {
+  //  padding: 0;
+  //  background-color: palette(blue,base);
+  //  overflow: hidden;
+  //  @include rhythm-padding(2);
+  //  .quote-wrap {
+  //    .image {
+  //      display: none;
+  //      @include susy-breakpoint($breakpoint-large, $susy-large) {
+  //        display: block;
+  //        position: absolute;
+  //        top: 0;
+  //        bottom: 0;
+  //        left: 0;
+  //        width: 50%;
+  //        background-size: cover;
+  //        background-repeat: no-repeat;
+  //        background-position: left center;
+  //        z-index: 0;
+  //      }
+  //    }
+  //    .color {
+  //      position: absolute;
+  //      top: 0;
+  //      bottom: 0;
+  //      left: 50%;
+  //      transform: translate(-50%, 0);
+  //      width: 400px;
+  //      z-index: 0;
+  //      background-color: palette(blue,base);
+  //      @include susy-breakpoint($breakpoint-large, $susy-large) {
+  //        transform: skew(35deg, 0deg);
+  //        margin-left: -175px;
+  //        border-left: 30px solid white;
+  //      }
+  //    }
+  //  }
+  //  .inner {
+  //    //background-color: palette(blue,base);
+  //    z-index: 3;
+  //    .text {
+  //      @include rhythm-padding(1.5);
+  //      @include susy-breakpoint($breakpoint-large, $susy-large) {
+  //       @include span(50% last);
+  //        text-align: right;
+  //        @include padding-right(1);
+  //      }
+  //      p, h2, h3, h4 , h5, h6, blockquote {
+  //        color: palette(white, base);
+  //      }
+  //      p.person {
+  //        z-index: 8;
+  //        position: relative;
+  //        span {
+  //          color: palette(yellow, base);
+  //          font-weight:bold;
+  //        }
+  //      }
+  //      blockquote {
+  //        font-family: $font-family-headings;
+  //        text-transform: uppercase;
+  //        font-weight: bold;
+  //        @include rem('font-size', ms(6));
+  //        @include custom-line-height(1.5);
+  //        &:after {
+  //          left: 0;
+  //          right: auto;
+  //          @include susy-breakpoint($breakpoint-large, $susy-large) {
+  //            right: 0;
+  //            left: auto;
+  //          }
+  //        }
+  //      }
+  //      .button {
+  //        margin-right: 0;
+  //      }
+  //    }
+  //  }
+  //}
+
+  &.quote_sameheight-img {
+    padding: 0;
+    //background-color: palette(blue,base);
+    overflow: hidden;
+    @include rhythm-padding(2);
+    .quote-wrap {
+      .image {
+        display: none;
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          display: block;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: left center;
+          z-index: 0;
+        }
+      }
+    }
+    .inner {
+      z-index: 3;
+      .text {
+        position: relative;
+        @include rhythm-padding(1.5);
+        background-color: palette(yellow,base);
+        @include padding-left(2);
+        @include padding-right(2);
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          @include span(75% last);
+          text-align: left;
+          @include padding-left(2);
+          @include padding-right(3);
+          @include margin-top(2);
+          @include margin-bottom(2);
+          &:after {
+            display: block;
+            position: absolute;
+            content: ' ';
+            left: 100%;
+            width: 9999px;
+            width: 50vw;
+            top:0;
+            bottom:0;
+            background-color: palette(yellow,base);
+          }
+        }
+        p, h2, h3, h4 , h5, h6, blockquote {
+          color: palette(white, base);
+        }
+        p.person {
+          z-index: 8;
+          position: relative;
+          span {
+            //color: palette(yellow, base);
+            //font-weight:bold;
+          }
+        }
+        blockquote {
+          font-family: $font-family;
+          @include rem('font-size', ms(2));
+          @include custom-line-height(1);
+          &:after {
+            left: 0;
+            right: auto;
+          }
+        }
+        .button {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &.logo_block {
+
+    .inner {
+      @include padding-bottom(1);
+      .content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        // @include susy-breakpoint($breakpoint-large, $susy-large) {}
+        .intro {
+          flex: 0 0 100%;
+        }
+        .logo-item {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          // img {
+          //   @include vcenter();
+          // }
+        }
+
+      }
+    }
+
+  }
+
+
+  &.searchresults {
+
+    .intro {
+      span {
+        color: palette(blue,base);
+      }
+    }
+
+    .searchresult {
+      display: block;
+      position: relative;
+      @include padding-top(1);
+      @include padding-bottom(1);
+      @include padding-left(1);
+      @include padding-right(1);
+      text-decoration: none;
+      color: palette(grey, text);
+      &:hover {
+        background-color: palette(grey, bg);
+      }
+      &:before {
+        content: ' ';
+        position: absolute;
+        top:0;
+        right: 0;
+        bottom: 0;
+        left:0;
+        border: 1px solid palette(grey, lightgrey);
+        border-bottom: transparent;
+        //z-index: -1;
+      }
+      &:last-of-type {
+        &:before {
+          border-bottom:1px solid palette(grey, lightgrey);
+        }
+      }
+      p {
+        color: palette(blue,base);
+        margin-bottom: 0;
+      }
+      h2 {
+        color: palette(green, base);
+      }
+
+    }
+
+  }
+
+
+}
+
+
+.content_sidebar_wrap {
+  display: block;
+  position: relative;
+
+  @include padding-top(2);
+  @include padding-bottom(1.5);
+
+  @include margin-top(1.5);
+  overflow: hidden;
+  clear: both;
+  @include container();
+  @include susy-breakpoint($breakpoint-large, $susy-large) {
+    @include container();
+  }
+}
+
+
+
+.sidebar {
+  display: block;
+  @include susy-breakpoint($breakpoint-large, $susy-large) {
+    @include span(3 last);
+  }
+  .widget {
+    @include margin-bottom(1.5);
+    background-color: palette(grey, bgwidget);
+    overflow: hidden;
+
+    &.widget_search {
+      background-color: transparent;
+      overflow: visible;
+      input {
+        @include default-border-radius();
+      }
+    }
+
+    .widgettitle {
+      @include rhythm-padding(.5);
+      @include padding-left(1);
+      @include padding-right(1);
+      color: palette(blue, base);
+      background-color: palette(grey, bgwidgettitle);
+      margin-bottom: 0;
+      @include rem('font-size', ms(1));
+    }
+
+    list-style: none;
+    ul, li {
+      margin: 0;
+      padding: 0;
+      &:before {
+        content: normal;
+      }
+    }
+
+    ul {
+      @include rhythm-padding(.5);
+      @include padding-left(1);
+      @include padding-right(1);
+      li {
+        display: block;
+        @include rhythm-padding(.5);
+        border-bottom: 1px solid palette(grey, postcounts);
+        a {
+          text-decoration: none;
+          color: palette(grey, text);
+        }
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          &:hover {
+            a {
+              color: palette(green,base);
+            }
+          }
+        }
+      }
+    }
+
+    .screen-reader-text {
+      display: none;
+    }
+    &.widget_categories, &.widget_recent_entries {
+      ul {
+        li {
+          &:last-of-type {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+    &.widget_categories {
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+        ul {
+          li {
+            &:hover {
+              span {
+                background-color: palette(green,base);
+                color: palette(white,base);
+              }
+            }
+          }
+        }
+      }
+      .cat-item {
+        text-align: left;
+        a {
+
+        }
+        span {
+          display: block;
+          float: right;
+          @include rem('font-size', ms(-1));
+          @include custom-line-height(.75);
+          background-color: palette(grey, postcounts);
+          //color: palette(white,base);
+          @include padding-left(.25);
+          @include padding-right(.25);
+          @include margin-top(.25);
+          @include custom-border-radius(3,3,3,3);
+        }
+      }
+    }
+    &.widget_recent_entries {
+      a {
+        display: block;
+      }
+      span {
+        display: block;
+        color: palette(grey, bgwidgetdate);
+        @include rem('font-size', ms(-1));
+      }
+    }
+
+  }
+
+
+}

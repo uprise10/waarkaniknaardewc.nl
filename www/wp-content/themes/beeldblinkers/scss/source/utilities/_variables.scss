@@ -1,0 +1,48 @@
+// Debug?
+$debug: false !default;
+
+////////////////////////////////
+//  Font Settings / vertical rhythm
+////////////////////////////////
+
+// All font-sizes in rem
+$rhythm-unit: "rem";
+// ..with px fallback for IE8
+$rem-with-px-fallback: true;
+
+$base-font-size: 16px;
+// base font size used in design
+$base-font-size-for-calculations: 16px;
+$base-font-leading: 1;
+$base-line-height: 24px;
+$round-to-nearest-half-line: false;
+$ms-base: $base-font-size;
+$ms-ratio: $major-second;
+
+////////////////////////////////
+//  Breakpoints
+////////////////////////////////
+$breakpoint-small: 30em;
+$breakpoint-large: 60em;
+
+// dpi breakpoints
+$breakpoint-hidpi: min-resolution 1.5dppx;
+
+////////////////////////////////
+//  Font family
+////////////////////////////////
+
+$font-family: Roboto, Helvetica Neue, Arial, sans-serif;
+$font-family-bold: Roboto, Helvetica Neue, Arial, sans-serif;
+$font-family-light: Roboto, Helvetica Neue, Arial, sans-serif;
+$font-family-headings: Roboto, Helvetica Neue, Arial, sans-serif;
+$font-family-special: Roboto, Helvetica Neue, Arial, sans-serif;
+$font-family-headings-thin: Roboto, Helvetica Neue, Arial, sans-serif;
+//$font-family-special-bold: 'Majesti Banner Book', Helvetica Neue, Arial, sans-serif;
+// 'hk_groteskbold', Roboto, Helvetica Neue, Arial, sans-serif;
+// Roboto, Helvetica Neue, Arial, sans-serif;
+
+
+//'bellfort_roughbold'
+//'hk_groteskbold'
+//'hk_groteskregular'

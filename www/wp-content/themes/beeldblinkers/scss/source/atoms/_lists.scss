@@ -1,0 +1,53 @@
+ul,
+ol {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    @include breakpoint($breakpoint-large) {
+        padding-left: 1em;
+    }
+}
+
+ul li {
+    position: relative;
+    padding-left: 1em;
+    &::before {
+        font-size: 32px;
+        content: '•';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+ol {
+    counter-reset: list;
+    > li {
+        position: relative;
+        padding-left: 2em;
+        &::before {
+            @extend %tw-bold;
+            counter-increment: list;
+            content: '0' counter(list);
+            color: inherit;
+            display: inline-block;
+            position: absolute;
+            left: 0;
+        }
+
+        // This selected every adjacent <li>
+        // from the 10th and overrides the
+        // content property of each
+        &:nth-child(10n) ~ li::before,
+        &:nth-child(10n)::before {
+            content: counter(list);
+        }
+
+    }
+}
+
+ul ol,
+ol ul {
+    padding-top: 0;
+}

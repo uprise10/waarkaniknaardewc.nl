@@ -1,0 +1,13 @@
+html {
+    box-sizing: border-box;
+    font-family: $font-family;
+    // better font rendering
+    -webkit-font-smoothing: antialiased;
+    //noinspection CssUnknownProperty
+    -moz-osx-font-smoothing: grayscale;
+    color: $color-text-default;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}

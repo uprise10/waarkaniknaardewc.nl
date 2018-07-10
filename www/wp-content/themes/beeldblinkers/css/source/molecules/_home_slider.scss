@@ -1,0 +1,278 @@
+.godown {
+  position: absolute;
+  right: -50%;
+  bottom: 0;
+  left: -50%;
+  @include line-width(6);
+  @include line-height(4);
+  @include margin-bottom(0);
+  margin-left: auto;
+  margin-right: auto;
+  //background-color: palette(white, base);
+  //border-radius: 50%;
+  text-align: center;
+  //white-space: nowrap;
+  //overflow: hidden;
+  //text-indent: 200%;
+  //border: 12px solid palette(white, lighter);
+  background-clip: content-box;
+  cursor: pointer;
+  a {
+    color: palette(white, base);
+  }
+  i {
+    @include margin-top(.60);
+    font-size: 80px;
+  }
+}
+
+
+.bigslides {
+  position: relative;
+  //@include margin-bottom(2);
+  overflow: hidden;
+
+  .slides-cell {}
+
+  &.videoslide {
+    .noneslides {
+      .slideimage {
+        visibility: visible;
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          visibility: hidden;
+        }
+      }
+      video {
+        visibility: hidden;
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  .overlaycolor {
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background-color: palette(grey,video);
+  }
+
+  h1, h2, h3 {
+    @include rem('font-size', ms(10));
+    @include custom-line-height(2);
+    @include susy-breakpoint($breakpoint-large, $susy-large) {
+      @include rem('font-size', ms(15));
+      @include custom-line-height(3.25);
+    }
+  }
+  p {
+    color: palette(white, base);
+  }
+
+  .inner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    @include absolute-top(4);
+    bottom: auto;
+    @include container();
+    @include padding-left(1);
+    @include padding-right(1);
+    @include susy-breakpoint($breakpoint-large, $susy-large) {
+      left: 50%;
+      top:50%;
+      transform: translate(-50%, -50%);
+      @include container();
+      @include span(12);
+      @include padding-left(1);
+      @include padding-right(1);
+    }
+    .button {
+      color: palette(white,base);
+      &:after {
+        border-color: palette(white,base);
+      }
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+        &:hover {
+          &:after {
+            border-color: palette(yellow, base);
+          }
+        }
+      }
+    }
+  }
+
+  //.slide_bg_position {
+  //  position: absolute;
+  //  top: auto;
+  //  bottom: 0;
+  //  right: -218px;
+  //  @include rhythm-height(30);
+  //  @include susy-breakpoint($breakpoint-large, $susy-large) {
+  //    @include rhythm-height(30);
+  //    right: 0;
+  //  }
+  //
+  //  @at-root .bigslides.slidelow {
+  //    .slide_bg_position {
+  //      bottom: -211px;
+  //      @include susy-breakpoint($breakpoint-large, $susy-large) {
+  //        bottom: -521px;
+  //      }
+  //    }
+  //  }
+  //
+  //  .site_logo {
+  //    display: block;
+  //    position: absolute;
+  //    bottom: 0;
+  //    right: 198px;
+  //    left: auto;
+  //    z-index: 7;
+  //    @include susy-breakpoint($breakpoint-large, $susy-large) {
+  //      right: 162px;
+  //    }
+  //    img {
+  //        display: block;
+  //        width: auto;
+  //        height: 180px;
+  //      @include susy-breakpoint($breakpoint-large, $susy-large) {
+  //        height: 211px;
+  //      }
+  //    }
+  //  }
+  //
+  //  .slide_bg_wrap {
+  //    position: absolute;
+  //    top: 0;
+  //    bottom: 0;
+  //    @include absolute-right(0);
+  //    width: 10px;
+  //    overflow: visible;
+  //
+  //    .slide_bg_white {
+  //      position: absolute;
+  //      top: -20px;
+  //      right: -10px;
+  //      width: 480px;
+  //      height: 220%;
+  //    }
+  //    .slide_bg_blue {
+  //      position: absolute;
+  //      top: -10px;
+  //      right: -62px;
+  //      width: 385px;
+  //      height: 149%;
+  //
+  //      @include susy-breakpoint($breakpoint-large, $susy-large) {
+  //        right: -70px;
+  //        //width: 305px;
+  //        height: 140%;
+  //      }
+  //      @at-root .bigslides.slidelow {
+  //        .slide_bg_wrap {
+  //          .slide_bg_white {
+  //            height: 231%;
+  //            @include susy-breakpoint($breakpoint-large, $susy-large) {
+  //              height: 220%;
+  //            }
+  //          }
+  //          .slide_bg_blue {
+  //            height: 156%;
+  //            @include susy-breakpoint($breakpoint-large, $susy-large) {
+  //              height: 135%;
+  //            }
+  //          }
+  //        }
+  //      }
+  //    }
+  //  }
+  //
+  //}
+
+  .slides {
+    display: none;
+  }
+
+  .slides, .noneslides {
+
+
+    position: relative;
+
+    .slides-cell {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 100vh;
+
+      @at-root .bigslides.slidelow {
+        .inner {
+          @include susy-breakpoint($breakpoint-large, $susy-large) {
+            bottom: 0;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, 0);
+          }
+        }
+        .slides, .noneslides {
+          .slides-cell {
+            @include rhythm-height(9);
+            @include susy-breakpoint($breakpoint-large, $susy-large) {
+              @include rhythm-height(14);
+            }
+          }
+        }
+      }
+
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+        @include rhythm-height(30);
+      }
+      overflow: hidden;
+      .image {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        //@include flexEmbed(3, 1);
+        img, video {
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; // fill image inside specified size whitout pulling out of proportion
+
+        }
+
+        img {
+          object-position: 60% center;
+          @include susy-breakpoint($breakpoint-large, $susy-large) {
+            object-position: center center;
+          }
+        }
+        video {
+          visibility: hidden;
+          object-position: center center;
+          @include susy-breakpoint($breakpoint-large, $susy-large) {
+            visibility: visible;
+          }
+        }
+
+
+      }
+
+    }
+  }
+
+  &.slidelow {
+
+  }
+
+}

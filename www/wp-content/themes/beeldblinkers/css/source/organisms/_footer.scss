@@ -1,0 +1,150 @@
+footer {
+  display: block;
+  position: relative;
+  @include margin-top(1.5);
+  clear: both;
+
+  .footer_logo {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    @include line-height(2);
+    width: auto;
+  }
+
+  .block {
+
+    background-color: palette(grey, bg);
+
+    .inner {
+      @include rhythm-padding(3);
+      h3:first-of-type {
+        color: palette(green, base);
+        @include margin-bottom(2);
+      }
+
+      .item {
+        &.introtext {
+          p:first-of-type {
+            @include susy-breakpoint($breakpoint-large, $susy-large) {
+              @include padding-top(.75);
+            }
+          }
+        }
+        .nieuwsbox {
+          h3 {
+            @include margin-bottom(.5);
+          }
+        }
+      }
+
+    }
+  }
+
+  .item {
+
+    @include margin-top(2);
+    @include susy-breakpoint($breakpoint-large, $susy-large) {
+      @include margin-top(0);
+    }
+
+    @include rem('font-size', ms(-1));
+    p, a, li {
+      @include rem('font-size', ms(-1));
+    }
+
+    @include susy-breakpoint($breakpoint-large, $susy-large) {
+      @include gallery(3);
+    }
+
+    .row {
+      display: block;
+      position: relative;
+      clear: both;
+      @include padding-bottom(.5);
+      @include margin-bottom(.5);
+      overflow: hidden;
+
+      &:after {
+        content: ' ';
+        position: absolute;
+        @include absolute-right(0);
+        bottom: 0;
+        @include absolute-left(0);
+        border-bottom: 1px solid palette(grey, navborders);
+      }
+
+      .title {
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          @include span(1 of 3);
+        }
+      }
+      .content {
+        color: palette(grey, text);
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          @include span(2 of 3 last);
+        }
+        i {
+          display:inline-block;
+          text-align: center;
+          color: palette(white, base);
+          @include line-width(.75);
+          @include line-height(.75);
+          @include custom-line-height(.75);
+          background-color: palette(grey, navs);
+          @include custom-border-radius(3, 3, 3, 3);
+          vertical-align: bottom;
+          cursor: pointer;
+          @include susy-breakpoint($breakpoint-large, $susy-large) {
+            &:hover {
+              background-color: palette(green, base);
+            }
+          }
+
+        }
+
+      }
+    }
+
+  }
+
+  .copyright {
+    display: block;
+    background-color: palette(white, base);
+    @include rhythm-padding(1);
+    text-align: center;
+    span {
+      color: palette(grey,lightgrey);
+    }
+  }
+
+}
+
+.footer_intro_logo {
+  @include line-height(1);
+  width: auto;
+}
+
+.footer_social_icons {
+  a {
+    text-decoration: none;
+  }
+}
+
+.footer_logos {
+  height: auto;
+  @include padding-bottom(.5);
+  @include susy-breakpoint($breakpoint-large, $susy-large) {
+    @include line-height(4);
+  }
+  a {
+    text-decoration: none;
+  }
+  img {
+    display: inline-block;
+    @include padding-left(.5);
+    @include padding-right(.5);
+    @include rhythm-padding(.5);
+    vertical-align: middle;
+  }
+}

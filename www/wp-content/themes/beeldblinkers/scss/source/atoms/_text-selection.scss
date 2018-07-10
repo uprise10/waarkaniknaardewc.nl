@@ -1,0 +1,11 @@
+::-moz-selection {
+    background: palette(blue, base);
+    text-shadow: none;
+    color: palette(white);
+}
+
+::selection {
+    background: palette(blue, base);
+    color: palette(white);
+    text-shadow: none;
+}

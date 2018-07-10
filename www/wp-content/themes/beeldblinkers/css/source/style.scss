@@ -1,0 +1,84 @@
+/*
+Theme Name: beeldblinkers
+Author: internetbureau Pix
+Author URI: http://ibpix.com
+Description: theme development by ibpix
+Version: 0.1
+Text Domain: ibpix
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+/* ==========================================================================
+    Base file, all includes, defines & custom mixins should be added here
+    ========================================================================= */
+// Framework includes
+@import "susy";
+@import "breakpoint";
+@import 'modular-scale';
+@import "./node_modules/vertical-rhythms-without-compass/vertical-rhythms";
+// Vendor includes
+
+@import "vendor/normalize";
+
+@import "font-awesome/font-awesome";
+
+@import "organisms/fonts";
+
+// Utilities
+@import "utilities/mixins";
+@import "utilities/custom_rhythm_mixins";
+@import "utilities/variables";
+@import "utilities/palettes";
+@import "utilities/grid";
+@import "utilities/typography";
+
+@import "vendor/flickity";
+
+//@import "animations/viewportAnim";
+
+
+// Atoms
+@import "atoms/html";
+@import "atoms/body";
+@import "atoms/buttons";
+@import "atoms/headings";
+@import "atoms/text-selection";
+@import "atoms/links";
+@import "atoms/lists";
+@import "atoms/inputs";
+@import "atoms/labels";
+@import "atoms/hr";
+
+// Molecules
+@import "molecules/nav";
+//@import "molecules/content-blocks";
+@import "molecules/content-blocks-used";
+@import "molecules/home_slider";
+@import "molecules/searchforms";
+@import "molecules/pagination";
+@import "molecules/google-map";
+
+// Organisms
+@import "organisms/footer";
+@import "organisms/header";
+@import "organisms/article";
+// Templates
+@import "templates/page";
+
+
+
+//@include susy-breakpoint($breakpoint-large, $susy-large) {
+//  .nav__main ul>li a {
+//    padding-right:1.375rem !important;
+//  }
+//  .nav__main ul>li.loginnav {
+//    margin-right: 1.375rem !important;
+//  }
+//
+//  h1, h2, h3, .t-xxlarge {
+//    font-size:2.25rem !important;
+//  }
+//
+//  .block {
+//    padding-top:6rem !important;
+//  }
+//}

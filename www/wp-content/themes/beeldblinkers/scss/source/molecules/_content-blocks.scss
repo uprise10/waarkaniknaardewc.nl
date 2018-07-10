@@ -1,0 +1,1960 @@
+.block {
+  display: block;
+  position: relative;
+
+  @include padding-top(2);
+  @include padding-bottom(1.5);
+  @include margin-top(0);
+
+  clear: both;
+
+  &.bg-black {
+    background-color: palette(black,base);
+  }
+
+
+  &.bg-grey {
+    background-color: palette(grey, bg);
+    @include padding-top(4);
+    @include padding-bottom(3);
+    @include margin-top(0);
+    @include margin-bottom(0);
+  }
+
+  &.footer_block {
+    @include padding-top(3);
+    @include padding-bottom(3);
+  }
+
+  .person {
+    font-family: $font-family-bold;
+    //font-weight: bold;
+    overflow: hidden;
+    @include line-height(2);
+
+    @include rem('font-size', ms(1));
+
+    //text-align: right;
+
+    //@include padding-bottom(0);
+    //@include margin-top(0);
+    //@include margin-bottom(0);
+
+    @include susy-breakpoint($breakpoint-large, $susy-large) {
+      @include line-height(1);
+    }
+    span {
+      font-family: $font-family;
+      //font-family: $font-family;
+      //font-weight: 400;
+      //color: palette(blue, base);
+      //color: palette(green, base);
+    }
+    @at-root .block.quote_sameheight-img .content .text.grey {
+      .person {
+        color: palette(green, base);
+      }
+      blockquote {
+        &:after {
+          background-image: url("/wp-content/themes/beeldblinkers/img/quote_groen.svg");
+        }
+      }
+    }
+  }
+
+
+  .inner {
+    //@include clearfix();
+    @include padding-right(1);
+    @include padding-left(1);
+    @include susy-breakpoint($breakpoint-large, $susy-large) {
+      @include padding-right(0);
+      @include padding-left(0);
+    }
+
+  }
+
+  .footer {
+    display: block;
+    clear: both;
+    text-align: center;
+    padding-left: span(1);
+    padding-right: span(1);
+    @include padding-top(2);
+    @include padding-bottom(0);
+    @include susy-breakpoint($breakpoint-large, $susy-large) {
+      padding-left: span(1);
+      padding-right: span(1);
+    }
+  }
+
+  .intro {
+    display: block;
+    clear: both;
+    text-align: center;
+    @include padding-bottom(2);
+    h1, h2, h3 {
+      position: relative;
+      letter-spacing: -1px;
+      @include margin-bottom(0);
+      //+p {
+      //  @include margin-top(-1);
+      //}
+      span {
+        color: palette(blue,base);
+      }
+      //&:after {
+      //  content: ' ';
+      //  position: absolute;
+      //  @include line-width(9);
+      //  left: -50%;
+      //  right: -50%;
+      //  bottom: 0;
+      //  margin-left: auto;
+      //  margin-right: auto;
+      //  border: 1px solid palette(grey, bg);
+      //  @at-root .block.bg-grey {
+      //    h1, h2, h3 {
+      //      &:after {
+      //        border: 1px solid palette(white, base);
+      //      }
+      //    }
+      //  }
+      //}
+    }
+    //overflow: hidden;
+    @include susy-breakpoint($breakpoint-large, $susy-large) {
+      //@include span(10);
+      //@include prefix(2);
+      padding-left: span(1);
+      padding-right: span(1);
+    }
+  }
+
+  &.text_center {
+    .content {
+      text-align: center;
+      p {
+        //@include rem('font-size', ms(3));
+        @include set-font-size-variant(large);
+        @include custom-line-height(1.25);
+      }
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+        margin-left: span(2);
+        margin-right: span(2);
+        //@include span(10);
+        //@include prefix(2);
+      }
+    }
+    &.small {
+      .content {
+        p {
+          @include rem('font-size', ms(1));
+        }
+      }
+    }
+
+  }
+
+
+
+  .nieuws_info {
+    p {
+      display: inline-block;
+      @include margin-left(-1.5);
+      @include margin-bottom(1);
+      @include padding-left(1.5);
+      @include padding-right(1.5);
+      @include rhythm-padding(0);
+      @include rem('font-size', ms(-1));
+      width: auto;
+      background-color: palette(white, base);
+    }
+  }
+
+  &.nieuws {
+    display: block;
+    position: relative;
+    clear: both;
+    overflow: hidden;
+
+    .laatste-nieuws {
+      clear: both;
+
+      .item {
+        position: relative;
+        background-color: palette(grey, base);
+        @include rhythm-padding(1.5);
+        @include padding-right(1.5);
+        @include padding-left(1.5);
+        overflow: hidden;
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          @include span(6 inside no-gutters);
+        }
+
+        &:first-of-type {
+          &:after {
+            position: absolute;
+            content: ' ';
+            top: auto;
+            height: 1px;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            border-bottom: 1px solid palette(white, base);
+            @include susy-breakpoint($breakpoint-large, $susy-large) {
+              border-right: 1px solid palette(white, base);
+              border-bottom: none;
+              top: 0;
+              height: 100%;
+              width: 1px;
+              left: auto;
+            }
+          }
+        }
+        h2 {
+          @include margin-bottom(.5);
+          font-family: $font-family-headings;
+          font-weight: bold;
+          color: red;
+        }
+        h2+p {
+          @include margin-top(.5);
+        }
+      }
+
+    }
+  }
+
+  &.nieuws_detail, &.nieuws_overzicht {
+    display: block;
+    position: relative;
+    clear: both;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+
+    @include susy-breakpoint($breakpoint-large, $susy-large) {
+      @include span(9);
+    }
+
+    .nieuws_content {
+      clear: both;
+
+      .item {
+        position: relative;
+        background-color: palette(grey, base);
+        @include rhythm-padding(1.5);
+        @include padding-right(1.5);
+        @include padding-left(1.5);
+        overflow: hidden;
+        @include margin-bottom(.5);
+
+        &:first-of-type {
+          &:after {
+            position: absolute;
+            content: ' ';
+            top: auto;
+            height: 1px;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            border-bottom: 1px solid palette(white, base);
+            @include susy-breakpoint($breakpoint-large, $susy-large) {
+              border-right: 1px solid palette(white, base);
+              border-bottom: none;
+              top: 0;
+              height: 100%;
+              width: 1px;
+              left: auto;
+            }
+          }
+        }
+
+        h2 {
+          @include margin-bottom(.5);
+          @include rem('font-size', ms(5));
+          @include custom-line-height(1.5);
+        }
+        h2+p {
+          @include margin-top(.5);
+        }
+
+      }
+
+    }
+  }
+
+
+
+
+  &.text_half {
+    @include susy-breakpoint($breakpoint-large, $susy-large) {
+      @include span(6);
+    }
+  }
+
+  &.quote_sameheight-img {
+    display: block;
+    position: relative;
+    .content {
+      position: relative;
+      overflow: hidden;
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+        @include custom-border-radius(0, 0, 14, 0);
+        overflow: hidden;
+      }
+
+      .text {
+
+        @include margin-top(8);
+        @include rhythm-padding(2);
+        @include padding-left(2);
+        @include padding-right(2);
+        background-color: palette(green, base);
+        text-align: center;
+        &.grey {
+          background-color: palette(grey, bg);
+          p, h2, h3, h4 , h5, h6, blockquote {
+            color: palette(blue, base);
+          }
+        }
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          @include span(5 inside no-gutter last);
+          @include margin-top(0);
+          @include custom-border-radius(0, 0, 14, 0);
+          text-align: left;
+          overflow: hidden;
+          @at-root .block.quote_sameheight-img {
+            &.img-left {
+              .text {
+                //float: left;
+                @include span(5 inside no-gutter);
+                @include custom-border-radius(0, 0, 0, 0);
+              }
+            }
+          }
+        }
+        p, h2, h3, h4 , h5, h6, blockquote {
+          color: palette(white, base);
+        }
+
+        blockquote {
+          @include set-font-size-variant(xlarge);
+          @include custom-line-height(1.5);
+          &:after {
+            margin-left: auto;
+            margin-right: auto;
+            left: -50%;
+            right: -50%;
+            @include susy-breakpoint($breakpoint-large, $susy-large) {
+              left: 0;
+              right: auto;
+            }
+          }
+        }
+
+      }
+
+      .image {
+        position: absolute;
+        top:0;
+        right: 0;
+        left: 0;
+        @include line-height(8);
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          @include span(7 inside no-gutter);
+          height: auto;
+          bottom: 0;
+          left: 0;
+          right: auto;
+          @at-root .block.quote_sameheight-img {
+            &.img-left {
+              .image {
+                @include span(7 inside no-gutter last);
+                left: auto;
+                right: 0;
+                img {
+                  @include custom-border-radius(0, 0, 14, 0);
+                }
+              }
+            }
+          }
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; // fill image inside specified size whitout pulling out of proportion
+          object-position: top center;
+        }
+      }
+    }
+  }
+
+
+
+  &.quote_fullwidth-img {
+    display: block;
+    position: relative;
+    .inner {
+      @include padding-left(0);
+      @include padding-right(0);
+    }
+
+    .image {
+      position: absolute;
+      @include absolute-top(-2);
+      right: 0;
+      @include absolute-bottom(2);
+      left: 0;
+      z-index: -1;
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+        @include span(12 inside no-gutter);
+        @include absolute-top(0);
+        @include absolute-bottom(0);
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; // fill image inside specified size whitout pulling out of proportion
+        object-position: top center;
+      }
+    }
+
+    &.fullwidth {
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+        .image {
+          @include absolute-bottom(4);
+        }
+      }
+    }
+
+    .content {
+      position: relative;
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+        @include custom-border-radius(0, 0, 20, 0);
+        @include line-height(16);
+        //@include margin-bottom(6);
+      }
+      .text {
+        display: block;
+        position: relative;
+        background-color: transparent;
+        @include rhythm-padding(2);
+        @include padding-left(2);
+        @include padding-right(2);
+
+        @include margin-left(1);
+        @include margin-right(1);
+
+        @include margin-top(4);
+        //@include margin-bottom(2);
+        text-align: center;
+        z-index: 4;
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          @include margin-top(3);
+          @include margin-bottom(0);
+          @include span(5 no-gutter last);
+          margin-right: span(1 wide);
+          @include custom-border-radius(0, 0, 14, 0);
+          text-align: left;
+          overflow: hidden;
+          z-index: 5;
+        }
+        &:after {
+          content: ' ';
+          position: absolute;
+          top:0;
+          right:0;
+          bottom: 0;
+          left: 0;
+          @include custom-border-radius(0, 14, 14, 14);
+          border: 1px solid palette(grey, stroke);
+          background-color: palette(white, base);
+          z-index: -1;
+        }
+        p, h2, h3, h4 , h5, h6, blockquote {
+          color: palette(blue, base);
+        }
+
+        blockquote {
+          @include set-font-size-variant(xlarge);
+          //line-height: .8125rem;
+          @include custom-line-height(1.5);
+          &:after {
+            background-image: url("/wp-content/themes/beeldblinkers/img/quote_blauw.svg");
+            margin-left: auto;
+            margin-right: auto;
+            left: -50%;
+            right: -50%;
+            @include susy-breakpoint($breakpoint-large, $susy-large) {
+              left: 0;
+              right: auto;
+            }
+          }
+        }
+
+      }
+
+    }
+    &.bg-green {
+      .content {
+        .text {
+          h1,h2,h3,p {
+            color: palette(white,base);
+          }
+          &:after {
+            background-color: palette(green);
+            border: none;
+          }
+        }
+      }
+    }
+  }
+
+
+
+  &.portfolio_archive {
+
+    .item {
+      display: block;
+      position: relative;
+      @include margin-bottom(2);
+      overflow: hidden;
+      @include line-height(18);
+
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+      }
+
+      .text {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        a {
+          //display: block;
+          text-decoration: none;
+        }
+        .image {
+          //@include line-height(8);
+          height: 100%;
+          //@include margin-bottom(0);
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; // fill image inside specified size whitout pulling out of proportion
+            object-position: center center;
+          }
+        }
+      }
+      .extra_info {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: palette(black, hover);
+        overflow: hidden;
+        @include padding-top(1);
+        @include padding-right(1);
+        @include padding-left(1);
+        @include padding-bottom(1);
+        opacity: 0;
+        overflow: hidden;
+        transition: opacity .2s;
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          display: block;
+        }
+        @at-root .portfolio_archive .item:hover .extra_info {
+          @include susy-breakpoint($breakpoint-large, $susy-large) {
+            transition: opacity .4s;
+            opacity: 100;
+          }
+        }
+        .centered_text {
+          @include centerer;
+
+        }
+        p, h2 {
+          color: palette(white, base);
+          text-align: center;
+        }
+        h2 {
+          @include margin-bottom(0);
+          @include custom-line-height(1);
+        }
+        p {
+          @include margin-top(0);
+          @include margin-bottom(0);
+          color: palette(green, base);
+          font-family: $font-family-special;
+        }
+
+      }
+
+    }
+
+  }
+
+
+
+  &.portfolio_overview {
+
+    .overview {
+      display: block;
+      position: relative;
+      clear: both;
+
+      .col_2 {
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          @include span(6 inside no-gutter);
+        }
+      }
+
+      .item {
+        display: block;
+        position: relative;
+        @include margin-bottom(0);
+        overflow: hidden;
+        background-color: palette(white,base);
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+
+        }
+        &.preview_1 {
+          @include line-height(26);
+        }
+        &.preview_2 {
+          @include line-height(13);
+        }
+        &.preview_3 {
+          @include line-height(13);
+          @include susy-breakpoint($breakpoint-large, $susy-large) {
+            @include span(50% inside no-gutter);
+          }
+        }
+        &.preview_4 {
+          @include line-height(13);
+          @include span(50% inside no-gutter);
+        }
+
+        .text {
+          position: absolute;
+          top:0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          a {
+            display: block;
+            text-decoration: none;
+          }
+          .image {
+            //@include line-height(8);
+            height: 100%;
+            //@include margin-bottom(0);
+            overflow: hidden;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover; // fill image inside specified size whitout pulling out of proportion
+              object-position: center center;
+            }
+          }
+        }
+        .extra_info {
+          display: none;
+          position: absolute;
+          top:0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          background-color: palette(black, hover);
+          overflow: hidden;
+          @include padding-top(1);
+          @include padding-right(1);
+          @include padding-left(1);
+          @include padding-bottom(1);
+          opacity: 0;
+          overflow: hidden;
+          transition: opacity .2s;
+          @include susy-breakpoint($breakpoint-large, $susy-large) {
+            display: block;
+          }
+          @at-root .portfolio_overview .overview .item:hover .extra_info {
+            @include susy-breakpoint($breakpoint-large, $susy-large) {
+              transition: opacity .4s;
+              opacity: 100;
+            }
+          }
+          .centered_text {
+            @include centerer;
+
+          }
+          p, h2 {
+            color: palette(white,base);
+            text-align: center;
+          }
+          h2 {
+            @include margin-bottom(0);
+            @include custom-line-height(1);
+          }
+          p {
+            @include margin-top(0);
+            @include margin-bottom(0);
+            color: palette(green,base);
+            font-family: $font-family-special;
+          }
+
+        }
+      }
+
+    }
+
+  }
+
+
+  &.info_block {
+    .content {
+      position: relative;
+      background-color: palette(grey, bg);
+      @include clearfix();
+      @include padding-left(2);
+      @include padding-right(2);
+      @include rhythm-padding(2);
+
+      @include custom-border-radius(14,14,0,14);
+
+      overflow: hidden;
+      .text {
+        h2 {
+          @include set-font-size-variant(xxlarge);
+          //@include custom-line-height(1.5);
+          color: palette(blue, base);
+          @include margin-bottom(.5);
+          @include susy-breakpoint($breakpoint-large, $susy-large) {
+            @include custom-line-height(1);
+            @include set-font-size-variant(xxxlarge);
+          }
+        }
+        p {
+          //@include set-font-size-variant(large);
+          //@include rem('font-size', ms(2));
+          @include margin-top(.5);
+        }
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          @include span(8);
+        }
+      }
+      .image {
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          position: absolute;
+          @include span(4 last);
+          top: 0;
+          right: 0;
+          bottom: 0;
+          text-align: right;
+          overflow: hidden;
+          img {
+            display: block;
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            object-position: bottom right;
+          }
+        }
+      }
+    }
+  }
+
+
+  &.faq_block {
+    li, ul {
+      padding: 0;
+      margin: 0;
+      &:before {
+        content: normal;
+      }
+    }
+    ul.faqs {
+      display: block;
+      position: relative;
+      padding: 0;
+      width: 100%;
+      overflow: hidden;
+      clear: both;
+      li.question {
+        padding: 0;
+
+        .question_wrap {
+          display: block;
+          position: relative;
+          overflow: hidden;
+          @include margin-bottom(.5);
+          cursor: pointer;
+          outline:none;
+          &:before {
+            content: ' ';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: auto;
+            @include line-width(2);
+            background-color: palette(green, base);
+            @include custom-border-radius(0,6,6,0);
+          }
+          &:after {
+            content: '\f105';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin-top: auto;
+            margin-bottom: auto;
+            font-family: FontAwesome;
+            @include line-width(2);
+            @include line-height(1);
+            color: palette(white,base);
+            text-align: center;
+            @include custom-line-height(1);
+            vertical-align: middle;
+            font-size: 2rem;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            @at-root .faq_block ul.faqs li.question.showanswer .question_wrap {
+              &:after {
+                content: '\f106';
+              }
+            }
+          }
+        }
+
+        h2 {
+          font-family: $font-family;
+          @include set-font-size-variant(medium);
+          color: palette(blue,base);
+          background-color: palette(grey, bg);
+          @include padding-right(2);
+          @include padding-left(.5);
+          @include margin-bottom(0);
+          @include rhythm-padding(.5);
+          @include custom-border-radius(6,6,6,6);
+        }
+        ul.answer {
+          display: none;
+          position: relative;
+          @include padding-top(1);
+          @include margin-top(-1.5);
+          @include margin-bottom(1);
+          z-index: -1;
+          &:before {
+            content: ' ';
+            position: absolute;
+            @include absolute-top(-1);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border: 1px solid palette(grey,bg);
+            @include custom-border-radius(0,0,6,6);
+          }
+          li {
+            @include padding-left(.5);
+            @include padding-right(.5);
+            @include padding-bottom(.5);
+          }
+        }
+        &.showanswer {
+          &:after {
+            content: normal;
+          }
+          h2 {
+            background-color: palette(blue,base);
+            color: palette(white,base);
+          }
+          ul.answer {
+            display: block;
+          }
+        }
+      }
+
+    }
+
+  }
+
+
+  &.info_fullwidth {
+
+    .cover_img {
+      position: absolute;
+      top:0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: no-repeat center center;
+      background-size: cover;
+      //z-index: -1;
+      //&:after {
+      //  content: ' ';
+      //  position: absolute;
+      //  top:0;
+      //  right: 0;
+      //  bottom: 0;
+      //  left: 0;
+      //  background-color: palette(blue, light);
+      //}
+    }
+    .content {
+      position: relative;
+      text-align: center;
+      padding-left: span(1);
+      padding-right: span(1);
+      @include rhythm-padding(8);
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+        padding-left: span(1);
+        padding-right: span(1);
+      }
+      h1,h2,p {
+        color: palette(white);
+      }
+      h1,h2 {
+        @include set-font-size-variant(xxlarge);
+        @include custom-line-height(2);
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          //@include set-font-size-variant(xxxlarge);
+          @include rem('font-size', ms(9));
+        }
+      }
+      p {
+        @include rem('font-size', ms(2));
+        @include padding-bottom(1);
+      }
+      a.button {
+        @include margin-top(2);
+      }
+    }
+
+  }
+
+
+  &.grid_3_icons {
+
+    .intro {
+      .titel {
+        color: palette(grey,lightgrey);
+      }
+    }
+
+    .overview {
+      display: block;
+      position: relative;
+      clear: both;
+
+      .item {
+        display: block;
+        position: relative;
+        @include margin-bottom(1);
+        background-color: palette(grey,lightgrey);
+        @include margin-bottom(1);
+        overflow: hidden;
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          @include gallery(3);
+        }
+        .text {
+          display: block;
+          position: relative;
+          a {
+            display: block;
+            text-decoration: none;
+          }
+          .image {
+            @include line-height(5);
+            overflow: hidden;
+            img {
+              width: 100%;
+              @include line-height(5);
+              object-fit: contain; // fill image inside specified size whitout pulling out of proportion
+              object-position: center center;
+              @include padding-bottom(0);
+            }
+          }
+        }
+
+      }
+
+    }
+
+    .footer {
+      .button {
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          @include padding-left(5);
+          @include padding-right(5);
+          margin-right: 0;
+        }
+      }
+    }
+
+  }
+
+
+  &.newsletter {
+    .bg {
+      //z-index: -1;
+      //
+      //&:before {
+      //  content: ' ';
+      //  position: absolute;
+      //  top:0;
+      //  right: 0;
+      //  bottom: 0;
+      //  left: 0;
+      //  background-color: palette(blue, base);
+      //}
+    }
+    .content {
+      position: relative;
+      text-align: center;
+      padding-left: span(1);
+      padding-right: span(1);
+      @include rhythm-padding(4);
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+        padding-left: span(1.5);
+        padding-right: span(1.5);
+      }
+
+      h1,h2 {
+        //@include set-font-size-variant(xxxlarge);
+        @include rem('font-size', ms(6));
+        @include custom-line-height(1.5);
+        @include padding-bottom(1);
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          @include rem('font-size', ms(8));
+        }
+      }
+      p {
+        @include rem('font-size', ms(2));
+        @include padding-bottom(1);
+      }
+
+      .subscribe {
+        display: block;
+        overflow: hidden;
+        input[type=text] {
+          display: inline-block;
+          @include custom-border-radius(3,3,3,3);
+          @include susy-breakpoint($breakpoint-large, $susy-large) {
+            @include span(9);
+          }
+        }
+        input[type=submit] {
+          display: inline-block;
+          @include susy-breakpoint($breakpoint-large, $susy-large) {
+            @include span(3 last);
+          }
+        }
+      }
+
+    }
+
+  }
+
+
+  &.quote_fullwidth {
+    display: block;
+    position: relative;
+    .content {
+      position: relative;
+      overflow: hidden;
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+        @include custom-border-radius(0, 0, 14, 0);
+        overflow: hidden;
+      }
+
+      .text {
+
+        @include margin-top(8);
+        @include rhythm-padding(2);
+        @include padding-left(2);
+        @include padding-right(2);
+        background-color: palette(green, base);
+        text-align: center;
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          //@include span(5 inside no-gutter last);
+          @include margin-top(0);
+          @include custom-border-radius(0, 0, 14, 0);
+          text-align: left;
+          overflow: hidden;
+        }
+
+        p, h2, h3, h4 , h5, h6, blockquote {
+          color: palette(white, base);
+        }
+
+        blockquote {
+          @include set-font-size-variant(xlarge);
+          @include custom-line-height(1.5);
+          &:after {
+            margin-left: auto;
+            margin-right: auto;
+            left: -50%;
+            right: -50%;
+            @include susy-breakpoint($breakpoint-large, $susy-large) {
+              left: 0;
+              right: auto;
+            }
+          }
+        }
+
+      }
+
+    }
+  }
+
+
+  &.quote_slides_block {
+    display: block;
+    position: relative;
+    background-color: palette(green, base);
+
+    @include padding-top(4);
+    @include padding-bottom(1);
+
+    @at-root .quote_slides-nav .flickity-prev-next-button {
+    }
+
+    .content {
+      position: relative;
+      overflow: hidden;
+      @include padding-bottom(1);
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+        overflow: hidden;
+      }
+
+      h2 {
+        @include margin-bottom(-2);
+      }
+
+      .quote_slides {
+
+        .flickity-viewport {
+          //overflow: hidden;
+          @include margin-top(2);
+          @include margin-bottom(4);
+        }
+        .flickity-page-dots {
+          @include margin-bottom(-4);
+        }
+
+        .quote {
+
+          display: block;
+          width: 100%;
+
+          @include margin-top(3);
+          padding-top: 0;
+          @include padding-left(2);
+          @include padding-right(2);
+          text-align: center;
+
+          font-family: $font-family-special;
+
+          @include susy-breakpoint($breakpoint-large, $susy-large) {
+            //@include span(5 inside no-gutter last);
+            @include margin-top(0);
+            overflow: hidden;
+          }
+
+          p {
+            color: palette(white, base);
+          }
+          h2, h3, h4 , h5, h6, blockquote {
+            color: palette(black, base);
+          }
+
+          blockquote {
+            //@include set-font-size-variant(xxxlarge);
+            @include rem('font-size', ms(8));
+            @include custom-line-height(1.5);
+          }
+
+        }
+
+      }
+
+    }
+  }
+
+
+
+  &.overige_ervaringen {
+    .content {
+      text-align: center;
+      margin-left: span(1 wide);
+      margin-right: span(1 wide);
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+        margin-left: span(3 wide);
+        margin-right: span(3 wide);
+      }
+      h2 {
+        color: palette(blue, base);
+        @include padding-bottom(1);
+      }
+      .item {
+        position: relative;
+        @include padding-bottom(1);
+        p {
+          margin-top: 0;
+        }
+        a {
+          color: palette(green,base);
+          text-decoration: none;
+          @include susy-breakpoint($breakpoint-large, $susy-large) {
+            &:hover {
+              color: palette(blue,base);
+            }
+          }
+        }
+        &:before {
+          content: ' ';
+          position: absolute;
+          right: 0;
+          @include absolute-bottom(1);
+          left: 0;
+          height: 1px;
+          border-bottom: 1px solid palette(grey,stroke);
+        }
+        &:nth-last-of-type {
+          &:before {
+            content: normal;
+          }
+        }
+      }
+    }
+  }
+
+
+  &.title_block {
+    background-color: palette(green,base);
+    @include padding-top(3);
+    @include padding-bottom(2);
+    @include margin-top(0);
+
+    .content {
+      text-align: center;
+      h1, p {
+        color: palette(white,base);
+      }
+      h1 {
+        @include margin-bottom(0);
+      }
+      p {
+        @include margin-top(0);
+      }
+    }
+
+  }
+
+
+  &.article_block {
+
+    //@include padding-top(1);
+    //@include padding-bottom(1);
+    //@include margin-top(0);
+
+    .inner {
+
+      .content {
+
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          margin-left: span(2 wide);
+          margin-right: span(2 wide);
+        }
+
+        @at-root .article_block.full {
+
+          .inner .content {
+            @include susy-breakpoint($breakpoint-large, $susy-large) {
+              margin-left: 0;
+              margin-right: 0;
+            }
+          }
+
+          .col_2 {
+            @include susy-breakpoint($breakpoint-large, $susy-large) {
+            @include span(6);
+              &.last {
+                @include span(6 last);
+              }
+            }
+          }
+          .col_3 {
+            @include susy-breakpoint($breakpoint-large, $susy-large) {
+              @include span(4);
+              &.last {
+                @include span(4 last);
+              }
+            }
+          }
+
+        }
+
+      }
+    }
+  }
+
+  .article {
+
+    a {
+      color: palette(green,base);
+      text-decoration: none;
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+       &:hover {
+         text-decoration: underline;
+       }
+      }
+    }
+
+    blockquote {
+      position: relative;
+      @include padding-left(2.5);
+      margin-left: 0;
+      margin-right: 0;
+      @include margin-top(2);
+      @include margin-bottom(2);
+      @include padding-top(0);
+
+      @include set-font-size-variant(xlarge);
+      @include custom-line-height(1.5);
+      color: palette(blue,base);
+
+      &:after {
+        content: ' ';
+        @include line-width(3);
+        @include line-height(1.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url("/wp-content/themes/beeldblinkers/img/quote_groen.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+
+    .info_footer {
+      text-align: left;
+      @include margin-top(2);
+      .button {
+        color: palette(white,base);
+        border-radius: 0;
+        @include padding-left(.75);
+        @include padding-right(.75);
+        font-family: $font-family;
+      }
+
+    }
+
+  }
+
+
+
+
+  &.team {
+
+    .overview {
+      display: block;
+      position: relative;
+      clear: both;
+
+      .item {
+        display: block;
+        position: relative;
+        @include custom-border-radius(0, 14, 0, 14);
+        @include margin-bottom(1);
+        overflow: hidden;
+        background-color: palette(white,base);
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          @include gallery(3);
+        }
+        .text {
+          display: block;
+          position: relative;
+          a {
+            display: block;
+            text-decoration: none;
+          }
+          .textwrap {
+            text-align: center;
+            @include padding-left(1);
+            @include padding-right(1);
+            h2 {
+              @include margin-bottom(0);
+              color: palette(blue,base);
+            }
+            p {
+              @include margin-top(0);
+              color: palette(green,base);
+            }
+          }
+          .image {
+            @include line-height(10);
+            @include margin-bottom(1);
+            overflow: hidden;
+            img {
+              width: 100%;
+              @include line-height(10);
+              object-fit: cover; // fill image inside specified size whitout pulling out of proportion
+              object-position: top center;
+              @include custom-border-radius(0, 14, 0, 0);
+            }
+          }
+        }
+        .position {
+          position: absolute;
+          left: 0;
+          right: 0;
+          @include absolute-bottom(1);
+        }
+        .extra_info {
+          display: none;
+          position: absolute;
+          top:0;
+          right: 0;
+          left: 0;
+          bottom: auto;
+          background-color: palette(green, light);
+          overflow: hidden;
+          text-align: center;
+          @include line-height(10);
+          @include padding-top(1.5);
+          @include padding-right(1.5);
+          @include padding-left(1.5);
+          @include padding-bottom(1);
+          opacity: 0;
+          @include custom-border-radius(0, 14, 0, 0);
+          overflow: hidden;
+          transition: opacity .2s;
+          @include susy-breakpoint($breakpoint-large, $susy-large) {
+            display: block;
+          }
+          @at-root .team .overview .item:hover .extra_info {
+            @include susy-breakpoint($breakpoint-large, $susy-large) {
+              transition: opacity .4s;
+              opacity: 100;
+            }
+          }
+          p, h2, h3 {
+            color: palette(white,base);
+          }
+          h2 {
+            @include margin-bottom(.5);
+          }
+          p {
+            @include margin-top(.5);
+          }
+          .button {
+            @include set-font-size-variant(small);
+            @include padding-top(0.25);
+            @include padding-right(.2);
+            @include padding-bottom(0.25);
+            @include padding-left(.15);
+            @include margin-right(.1);
+            @include margin-left(.1);
+            @include margin-bottom(.5);
+
+            @include line-height(1.5);
+            @include line-width(1.5);
+
+            overflow: hidden;
+
+            &:after {
+              border-radius: 50%;
+              border-width: 2px;
+            }
+          }
+
+        }
+      }
+
+    }
+
+  }
+
+
+
+  &.team_person {
+
+    .inner {
+
+      .person_image {
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          @include span(4);
+        }
+      }
+
+      .content {
+        h1 {
+          padding-bottom: 0;
+          margin-bottom: 0;
+          color: palette(blue,base);
+        }
+        p.worktype {
+          padding-top: 0;
+          margin-top: 0;
+          color: palette(green,base);
+        }
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          @include span(8 last);
+        }
+
+      }
+
+    }
+  }
+
+  &.service_grid {
+
+    .inner {
+
+      .content {
+        
+        .introtitel {
+          color: palette(white,base);
+        }
+        
+        .col_3 {
+          @include susy-breakpoint($breakpoint-large, $susy-large) {
+            @include span(2);
+            @include push(1);
+            &.first {
+              @include push(2);
+            }
+            h3 {
+              font-family: $font-family-special;
+              color: palette(green,base);
+            }
+            ul, li {
+              padding: 0;
+              margin: 0;
+            }
+            li {
+              &:before {
+                content: normal;
+              }
+              a {
+                color: palette(white,base);
+                text-decoration: none;
+                text-transform: lowercase;
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+
+  &.netwerk_block {
+
+    .inner {
+
+      .content {
+        
+        .intro {
+          h1 {
+            color: palette(blue,base);
+          }
+        }
+
+        .netwerk {
+          .item {
+            display: block;
+            position: relative;
+            @include margin-bottom(2);
+            clear: both;
+            overflow: hidden;
+
+            &:after {
+              content: ' ';
+              display: block;
+              position: absolute;
+              top: 0;
+              right: 0;
+              left: 0;
+              bottom: 0;
+              border-bottom: 2px solid palette(grey, bg);
+            }
+
+            .number {
+              color: palette(green,base);
+            }
+
+            .servicetitel {
+              @include padding-top(.5);
+            }
+
+            .logo {
+              position: relative;
+              margin: 0;
+              padding: 0;
+              overflow: hidden;
+              //&:after {
+              //  content: ' ';
+              //  display: block;
+              //  position: absolute;
+              //  top: 0;
+              //  right: 0;
+              //  left: 0;
+              //  bottom: 0;
+              //  border: 2px solid palette(grey, bg);
+              //}
+              @include susy-breakpoint($breakpoint-large, $susy-large) {
+                @include span(3 inside no-gutter);
+                &:after {
+                  //border-right: none;
+                }
+              }
+              img {
+                display: block;
+
+              }
+            }
+
+            .text {
+              //background-color: palette(grey,bg);
+              //@include padding-top(1);
+              @include padding-bottom(1.5);
+              @include padding-left(1.5);
+              @include padding-right(1.5);
+              @include susy-breakpoint($breakpoint-large, $susy-large) {
+              }
+              p {
+                @include rem('font-size', ms(2));
+              }
+              a {
+                color: palette(green,base);
+              }
+              @include susy-breakpoint($breakpoint-large, $susy-large) {
+                @include span(9 inside no-gutter last);
+                //@include padding-left(1);
+              }
+            }
+
+          }
+        }
+
+      }
+
+    }
+  }
+
+
+
+
+
+
+  &.partner_detail {
+
+    .inner {
+
+      .person_image {
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          @include span(4);
+        }
+      }
+
+      .content {
+        h1,h2,h3,h4,h5,h6 {
+          color: palette(blue,base);
+        }
+        h2+p,h3+p,h4+p,h5+p,h6+p {
+          @include margin-top(-1);
+        }
+        p.worktype {
+          padding-top: 0;
+          margin-top: 0;
+          color: palette(green,base);
+        }
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          @include span(8 last);
+        }
+
+        .info_contact {
+          .form {
+            @include susy-breakpoint($breakpoint-large, $susy-large) {
+              padding-right: span(3 of 8);
+            }
+          }
+        }
+
+      }
+
+    }
+  }
+
+
+  &.contact_block {
+
+
+    h1,h2,h3,h4,h5,h6 {
+      color: palette(blue,base);
+    }
+
+    .form {
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+        @include span(6);
+      }
+    }
+    .text {
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+        @include span(6 last);
+      }
+      h1,h2,h3,h4,h5,h6 {
+        @include margin-bottom(.5);
+      }
+    }
+
+    .row {
+      display: block;
+      @include rhythm-padding(2);
+      @include padding-left(1);
+      @include padding-right(1);
+      background-color: palette(white,base);
+      overflow: hidden;
+      @include margin-bottom(1);
+    }
+
+
+  }
+
+  &.form_block {
+
+    .content {
+      background-color: palette(white,base);
+      text-align: center;
+      @include padding-top(3);
+      @include padding-bottom(1);
+      @include padding-left(1);
+      @include padding-right(1);
+      overflow: hidden;
+
+      box-shadow: 0px 0px 50px 7px palette(grey, bgwidgetdate);
+
+      h1,h2,h3 {
+        color: palette(blue,base);
+        @include rem('font-size', ms(3));
+        margin-bottom: 0;
+      }
+      p.medium {
+        @include rem('font-size', ms(1));
+        margin-top: 0;
+      }
+      form {
+        text-align: left;
+      }
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+        margin-left: span(2);
+        margin-right: span(2);
+        @include padding-left(0);
+        @include padding-right(0);
+        .form {
+          margin-left: span(2);
+          margin-right: span(2);
+        }
+      }
+    }
+
+
+  }
+
+  &.searchresults {
+
+    .intro {
+      span {
+        color: palette(blue,base);
+      }
+    }
+
+    .searchresult {
+      display: block;
+      position: relative;
+      @include padding-top(1);
+      @include padding-bottom(1);
+      @include padding-left(1);
+      @include padding-right(1);
+      text-decoration: none;
+      color: palette(grey, text);
+      &:hover {
+        background-color: palette(grey, bg);
+      }
+      &:before {
+        content: ' ';
+        position: absolute;
+        top:0;
+        right: 0;
+        bottom: 0;
+        left:0;
+        border: 1px solid palette(grey, lightgrey);
+        border-bottom: transparent;
+        //z-index: -1;
+      }
+      &:last-of-type {
+        &:before {
+          border-bottom:1px solid palette(grey, lightgrey);
+        }
+      }
+      p {
+        color: palette(blue,base);
+        margin-bottom: 0;
+      }
+      h2 {
+        color: palette(green, base);
+      }
+
+    }
+
+  }
+
+
+
+}
+
+
+
+.content_sidebar_wrap {
+  display: block;
+  position: relative;
+
+  @include padding-top(2);
+  @include padding-bottom(1.5);
+
+  @include margin-top(1.5);
+  overflow: hidden;
+  clear: both;
+  @include container();
+  @include susy-breakpoint($breakpoint-large, $susy-large) {
+    @include container();
+  }
+}
+
+
+
+.sidebar {
+  display: block;
+  @include susy-breakpoint($breakpoint-large, $susy-large) {
+    @include span(3 last);
+  }
+  .widget {
+    @include margin-bottom(1.5);
+    background-color: palette(grey, bgwidget);
+    overflow: hidden;
+
+    &.widget_search {
+      background-color: transparent;
+      overflow: visible;
+      input {
+        @include default-border-radius();
+      }
+    }
+
+    .widgettitle {
+      @include rhythm-padding(.5);
+      @include padding-left(1);
+      @include padding-right(1);
+      color: palette(blue, base);
+      background-color: palette(grey, bgwidgettitle);
+      margin-bottom: 0;
+      @include rem('font-size', ms(1));
+    }
+
+    list-style: none;
+    ul, li {
+      margin: 0;
+      padding: 0;
+      &:before {
+        content: normal;
+      }
+    }
+
+    ul {
+      @include rhythm-padding(.5);
+      @include padding-left(1);
+      @include padding-right(1);
+      li {
+        display: block;
+        @include rhythm-padding(.5);
+        border-bottom: 1px solid palette(grey, postcounts);
+        a {
+          text-decoration: none;
+          color: palette(grey, text);
+        }
+        @include susy-breakpoint($breakpoint-large, $susy-large) {
+          &:hover {
+            a {
+              color: palette(green,base);
+            }
+          }
+        }
+      }
+    }
+
+    .screen-reader-text {
+      display: none;
+    }
+    &.widget_categories, &.widget_recent_entries {
+      ul {
+        li {
+          &:last-of-type {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+    &.widget_categories {
+      @include susy-breakpoint($breakpoint-large, $susy-large) {
+        ul {
+          li {
+            &:hover {
+              span {
+                background-color: palette(green,base);
+                color: palette(white,base);
+              }
+            }
+          }
+        }
+      }
+      .cat-item {
+        text-align: left;
+        a {
+
+        }
+        span {
+          display: block;
+          float: right;
+          @include rem('font-size', ms(-1));
+          @include custom-line-height(.75);
+          background-color: palette(grey, postcounts);
+          //color: palette(white,base);
+          @include padding-left(.25);
+          @include padding-right(.25);
+          @include margin-top(.25);
+          @include custom-border-radius(3,3,3,3);
+        }
+      }
+    }
+    &.widget_recent_entries {
+      a {
+        display: block;
+      }
+      span {
+        display: block;
+        color: palette(grey, bgwidgetdate);
+        @include rem('font-size', ms(-1));
+      }
+    }
+
+  }
+
+}

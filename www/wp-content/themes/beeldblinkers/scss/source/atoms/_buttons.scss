@@ -1,0 +1,149 @@
+.button, input[type=submit] {
+  position: relative;
+  font-family: $font-family-headings;
+  font-weight: normal;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  background-color: transparent;
+  @include set-font-size-variant(small);
+  color: palette(blue,base);
+  letter-spacing: 1px;
+  @include padding-top(0.25);
+  @include padding-right(1.5);
+  @include padding-bottom(0.25);
+  @include padding-left(1.5);
+  @include margin-right(.5);
+  @include margin-bottom(.5);
+  text-decoration: none;
+  text-transform: uppercase;
+  border:none;
+  outline: none;
+  &:after {
+    content: ' ';
+    position: absolute;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1px solid palette(blue,base);
+  }
+  @include susy-breakpoint($breakpoint-large, $susy-large) {
+    @include padding-top(0.5);
+    @include padding-right(1.5);
+    @include padding-bottom(0.5);
+    @include padding-left(1.5);
+    @include set-font-size-variant(base);
+    &:hover {
+      background-color: palette(yellow, base);
+      color: palette(white);
+      &:after {
+        border: 1px solid palette(yellow,base);
+      }
+    }
+  }
+
+  &.light {
+    color: palette(white,base);
+    @include susy-breakpoint($breakpoint-large, $susy-large) {;
+      // &:hover {
+      //   background-color: palette(yellow, base);
+      //   &:after {
+      //     border: 1px solid palette(yellow,base);
+      //   }
+      // }
+    }
+    &:after {
+      border: 1px solid palette(white,base);
+    }
+  }
+
+  &.btn-yellow {
+    background-color: palette(yellow,base);
+    color: palette(white,base);
+    &:after {
+      content: normal;
+    }
+  }
+
+
+  &.btn-download {
+    background-color: palette(yellow,base);
+    @include margin-right(.25);
+    font-family: $font-family;
+    text-transform: none;
+    // border-radius: 3px;
+    text-decoration: none;
+    color: palette(white,base);
+    @at-root .block .article a.btn-download {
+      color: palette(white,base);
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    &:hover {
+      text-decoration: none;
+    }
+    &:after {
+      position: relative;
+      display: inline-block;
+      content: "\f019";
+      font-family: FontAwesome;
+      color: white;
+      @include set-font-size-variant(large);
+      line-height: 1rem;
+      @include margin-left(.5);
+      border: none;
+    }
+  }
+
+}
+
+.leesmeer {
+  display: block;
+  font-family: $font-family-headings;
+  text-decoration: none;
+  color: palette(blue, base);
+
+  @include susy-breakpoint($breakpoint-large, $susy-large) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.leesmeer, .button, input[type=submit] {
+  i {
+    font-size: 1.2em;
+    vertical-align: middle;
+    margin-left: 4px;
+  }
+}
+
+
+.nav__main ul>li {
+
+  &.loginnav {
+    background-color: palette(yellow,base);
+    @include margin-right(.25);
+    a {
+      display: inline-block;
+      margin-right: 0;
+      font-size: .85rem;
+      padding: 5px 8px 0px 12px;
+      &:hover {
+        color: white;
+      }
+    }
+    &:after {
+      position: relative;
+      display: inline-block;
+      content: '\f13e';
+      font-family: FontAwesome;
+      color: white;
+      @include margin-right(.5);
+      @include set-font-size-variant(small);
+    }
+  }
+
+}
