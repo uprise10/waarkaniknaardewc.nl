@@ -107,6 +107,10 @@ if (!function_exists('ibpix_setup')) :
         }
         add_action( 'wp_enqueue_scripts', 'custom_scripts' );
 
+	    add_filter( 'embed_oembed_html', function ( $html ) {
+		    return $html !== '' ? '<div class="embed-container">' . $html . '</div>' : '';
+	    } );
+
     }
 endif; // ibpix_setup
 add_action('after_setup_theme', 'ibpix_setup');
