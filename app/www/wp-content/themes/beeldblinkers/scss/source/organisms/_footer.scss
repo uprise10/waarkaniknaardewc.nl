@@ -8,7 +8,7 @@ footer {
     .column {
         margin-bottom: 2em;
         @include susy-breakpoint($breakpoint-large, $susy-large) {
-            @include span(3 inside no-gutters);
+            @include span(4 inside no-gutters);
         }
     }
 
@@ -18,5 +18,35 @@ footer {
         font-size: .9em;
         font-style: italic;
         text-align: center;
+    }
+
+    .widget {
+        &.widget_nav_menu {
+            text-align: left;
+
+            ul {
+                margin: 0 0 1rem 0;
+                padding: 0;
+
+                li {
+                    list-style: none;
+                    padding: 0;
+                    
+                    &:before {
+                        content: '';
+                        display: none;
+                    }
+
+                    a {
+                        color: #666;
+                        text-decoration: none;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

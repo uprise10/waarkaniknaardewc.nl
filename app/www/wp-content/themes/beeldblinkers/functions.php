@@ -84,8 +84,29 @@ if (!function_exists('ibpix_setup')) :
 		    'after_title'   => '</h3>' );
 
 	    // adde widgets sidebar
-	    if ( function_exists('register_sidebar') )
-		    register_sidebar($sidebar_args);
+	    if ( function_exists('register_sidebar') ) {
+		    register_sidebar( $sidebar_args );
+		    register_sidebar( array(
+			    'name'          => __( 'Footer 1', 'ibpix' ),
+			    'id'            => 'footer-sidebar-1',
+			    'description'   => '',
+			    'class'         => '',
+			    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			    'after_widget'  => '</div>',
+			    'before_title'  => '<h3 class="widgettitle">',
+			    'after_title'   => '</h3>'
+		    ) );
+		    register_sidebar( array(
+			    'name'          => __( 'Footer 2', 'ibpix' ),
+			    'id'            => 'footer-sidebar-2',
+			    'description'   => '',
+			    'class'         => '',
+			    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			    'after_widget'  => '</div>',
+			    'before_title'  => '<h3 class="widgettitle">',
+			    'after_title'   => '</h3>'
+		    ) );
+	    }
 
         // tags and cats for pages
         function add_taxonomies_to_pages() {

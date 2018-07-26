@@ -575,6 +575,11 @@
         @include susy-breakpoint($breakpoint-large, $susy-large) {
           margin-left: span(2 wide);
           margin-right: span(2 wide);
+
+          .footer & {
+            margin-left: 0;
+            margin-right: 0;
+          }
         }
 
         @at-root .article_block.full {

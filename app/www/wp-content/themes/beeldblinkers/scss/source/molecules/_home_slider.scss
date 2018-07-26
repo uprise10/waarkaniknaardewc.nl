@@ -88,7 +88,7 @@
         text-align: center;
         @include susy-breakpoint($breakpoint-large, $susy-large) {
             left: 50%;
-            top: 50%;
+            top: 60%;
             transform: translate(-50%, -45%);
             @include container();
             @include span(12);
@@ -110,8 +110,8 @@
         }
 
         iframe {
-            height: 394px;
-            width: 700px;
+            height: 337px;
+            width: 600px;
             max-width: 100%;
         }
     }

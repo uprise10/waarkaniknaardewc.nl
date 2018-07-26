@@ -144,6 +144,11 @@
         margin-right: span(2);
         //@include span(10);
         //@include prefix(2);
+
+        .footer & {
+          margin-left: 0;
+          margin-right: 0;
+        }
       }
     }
     &.small {
