@@ -11,7 +11,7 @@
 
                     <div class="content article">
 
-                        <p class="nieuwsDate">Geplaatst op <?php echo get_the_date('d M Y'); ?> door <?php the_author(); ?></p>
+                        <p class="nieuwsDate">Geplaatst op <?php echo get_the_date('d M Y'); ?></p>
 
                         <?php the_title('<h1 class="nieuwsTitel">', '</h1>'); ?>
                         <?php the_content(); ?>

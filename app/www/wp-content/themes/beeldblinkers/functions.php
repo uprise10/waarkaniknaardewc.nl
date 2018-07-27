@@ -129,7 +129,7 @@ if (!function_exists('ibpix_setup')) :
         add_action( 'wp_enqueue_scripts', 'custom_scripts' );
 
 	    add_filter( 'embed_oembed_html', function ( $html ) {
-		    return $html !== '' ? '<div class="embed-container">' . $html . '</div>' : '';
+		    return $html !== '' ? '<div class="video-wrapper"><div class="embed-container">' . $html . '</div></div>' : '';
 	    } );
 
     }
