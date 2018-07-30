@@ -237,9 +237,9 @@ if ( ! class_exists( 'Gravity_Forms_Copernica_Addon_API' ) ) {
                         $body = json_encode( $body ); // then let PHP worry about the proper sanitation via json_encode
                     }
 
+	                set_transient( $transient_name, $body, 1 * DAY_IN_SECONDS );
                 }
 
-                set_transient( $transient_name, $body, 1 * DAY_IN_SECONDS );
             }
 
             return $body;
