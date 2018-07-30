@@ -9,8 +9,7 @@
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-    <link rel="shortcut icon" href="/favicon.ico"/>
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/img/favicon.png"/>
     <script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.custom.97074.js"></script>
     <?php wp_head(); ?>
 </head>
