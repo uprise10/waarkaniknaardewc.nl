@@ -361,3 +361,26 @@ $roleObject = get_role( 'editor' );
 if (!$roleObject->has_cap( 'edit_theme_options' ) ) {
     $roleObject->add_cap( 'edit_theme_options' );
 }
+
+
+add_action( 'pre_get_posts', function( \WP_Query $query ) {
+	if( ! is_admin() && $query->is_main_query() && $query->is_search() ) {
+		$meta_query = [
+			'relation' => 'OR',
+			[
+				'key' =>  '_yoast_wpseo_meta-robots-noindex',
+				'value' => '1',
+				'compare' => '!=',
+			],
+			[
+				'key' =>  '_yoast_wpseo_meta-robots-noindex',
+				'value' => '',
+				'compare' => 'NOT EXISTS',
+			]
+		];
+
+		$query->set( 'meta_query', $meta_query );
+	}
+
+	return $query;
+});
