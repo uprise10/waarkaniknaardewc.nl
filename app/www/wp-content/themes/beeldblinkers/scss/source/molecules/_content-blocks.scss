@@ -245,6 +245,18 @@
 
     .nieuws_content {
       clear: both;
+      overflow: hidden;
+
+      &__image {
+        float: right;
+        max-width: 200px;
+
+        img {
+          display: block;
+          height: auto;
+          max-width: 100%;
+        }
+      }
 
       .item {
         position: relative;
@@ -280,6 +292,15 @@
           @include margin-bottom(.5);
           @include rem('font-size', ms(5));
           @include custom-line-height(1.5);
+          
+          a {
+            color: #001d3d;
+            text-decoration: none;
+            
+            &:hover {
+              text-decoration: underline;
+            }
+          }
         }
         h2+p {
           @include margin-top(.5);

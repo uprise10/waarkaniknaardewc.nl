@@ -56,6 +56,7 @@ if (!function_exists('ibpix_setup')) :
         add_theme_support( 'post-thumbnails' );
         add_image_size( 'quote-bg-fw-plus-slides', 1034, 552, true );
         add_image_size( 'big-slides', 1600, 9999, false );
+        add_image_size( 'small', 200, 9999, false );
 
         // This theme uses wp_nav_menu() in two locations.
         register_nav_menus(array (

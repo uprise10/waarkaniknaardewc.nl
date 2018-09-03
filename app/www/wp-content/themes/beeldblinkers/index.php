@@ -11,8 +11,10 @@
                                 <div class="nieuws_info">
                                     <p>Geplaatst op <?php echo get_the_date('d M Y'); ?></p>
                                 </div>
-                                <?php the_title('<h2>','</h2>'); ?>
-                                <?php if($short_description) {
+                                <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                                <figure class="nieuws_content__image"><?php the_post_thumbnail( 'small' ); ?></figure>
+
+                                <?php if( ! empty( $short_description ) ) {
                                     echo $short_description;
                                 } else {
                                     the_excerpt();

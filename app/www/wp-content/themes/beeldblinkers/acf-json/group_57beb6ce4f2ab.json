@@ -15,8 +15,8 @@
                 "class": "",
                 "id": ""
             },
-            "layouts": [
-                {
+            "layouts": {
+                "57c541975b335": {
                     "key": "57c541975b335",
                     "name": "tekst_block",
                     "label": "Tekst block 1 colom",
@@ -45,7 +45,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "57fb4ee9a0dbb": {
                     "key": "57fb4ee9a0dbb",
                     "name": "tekst_block_2_coloms",
                     "label": "Tekst block 2 coloms",
@@ -93,7 +93,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "57fb4f2fa0dbe": {
                     "key": "57fb4f2fa0dbe",
                     "name": "tekst_block_3_coloms",
                     "label": "Tekst block 3 coloms",
@@ -160,7 +160,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "57beb6fbc8773": {
                     "key": "57beb6fbc8773",
                     "name": "big_slider",
                     "label": "Grote Slider",
@@ -641,7 +641,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "57bedc5e15c52": {
                     "key": "57bedc5e15c52",
                     "name": "info_volle_breedte",
                     "label": "Info volle breedte",
@@ -833,7 +833,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "57bee1b4d6f6a": {
                     "key": "57bee1b4d6f6a",
                     "name": "nieuwsbrief",
                     "label": "Nieuwsbrief",
@@ -842,7 +842,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "57bf4f9bc9b69": {
                     "key": "57bf4f9bc9b69",
                     "name": "agenda_overzicht",
                     "label": "Agenda overzicht",
@@ -896,7 +896,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "57ff4e5f4a651": {
                     "key": "57ff4e5f4a651",
                     "name": "contact_block",
                     "label": "Contact block",
@@ -923,7 +923,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "57ffc2a0c1a89": {
                     "key": "57ffc2a0c1a89",
                     "name": "laatste_nieuws",
                     "label": "Laatste Nieuws",
@@ -1114,7 +1114,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "57ffd848a92d8": {
                     "key": "57ffd848a92d8",
                     "name": "quote",
                     "label": "Quote",
@@ -1211,7 +1211,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "59427df541a46": {
                     "key": "59427df541a46",
                     "name": "logos",
                     "label": "Logo's",
@@ -1301,10 +1301,10 @@
                     "min": "",
                     "max": ""
                 }
-            ],
+            },
+            "button_label": "layout toevoegen",
             "min": "",
-            "max": "",
-            "button_label": "layout toevoegen"
+            "max": ""
         }
     ],
     "location": [
@@ -1331,16 +1331,14 @@
     "hide_on_screen": [
         "the_content",
         "excerpt",
-        "custom_fields",
         "discussion",
         "comments",
         "revisions",
         "format",
-        "page_attributes",
         "featured_image",
         "send-trackbacks"
     ],
     "active": 1,
     "description": "",
-    "modified": 1513710834
+    "modified": 1535960063
 }

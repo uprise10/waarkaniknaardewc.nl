@@ -77,6 +77,7 @@ if( $customSelection && !empty($selectedPostsObject) ) {
                                 <p>Geplaatst op <?php echo get_the_date('d M Y'); ?></p>
                             </div>
                             <div class="item-wrap">
+                                <figure class="item-wrap__image"><?php the_post_thumbnail( 'small' ); ?></figure>
                                 <?php the_title('<h2>','</h2>'); ?>
                                 <p><?php echo $short_description; ?></p>
                             </div>
