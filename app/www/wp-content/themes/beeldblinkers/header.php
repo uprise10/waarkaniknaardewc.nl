@@ -12,6 +12,30 @@
     <link rel="shortcut icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/img/favicon.png"/>
     <script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.custom.97074.js"></script>
     <?php wp_head(); ?>
+
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+    <script>
+        window.addEventListener("load", function(){
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "#e2f2ff",
+                        "text": "#000000"
+                    },
+                    "button": {
+                        "background": "#ea6009",
+                        "text": "#ffffff"
+                    }
+                },
+                "content": {
+                    "message": "Deze website gebruikt cookies, zodat je een betere ervaring op deze site hebt.",
+                    "dismiss": "Ok!",
+                    "link": "Lees meer",
+                    "href": "https://www.waarkaniknaardewc.nl/privacyverklaring/"
+                }
+            })});
+    </script>
 </head>
 <noscript><style>.site__header {transform: translate(0px,0px) !Important;}</style></noscript>
 <body <?php body_class(); ?>>
