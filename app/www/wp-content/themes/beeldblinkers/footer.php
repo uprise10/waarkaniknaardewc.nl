@@ -2,7 +2,7 @@
 
 if( ! is_front_page() ) {
 	$logos_titel = get_field( 'logos_titel', 'option' );
-	$logos       = get_field( 'logos', 'option' );
+	$logos       = get_field( 'footer_logos', 'option' );
 
 	if ( ! empty( $logos ) ) {
 		?>
@@ -13,7 +13,7 @@ if( ! is_front_page() ) {
                         <h2><?php echo $logos_titel; ?></h2>
                     </div>
 					<?php
-					while ( have_rows( 'logos', 'option' ) ) {
+					while ( have_rows( 'footer_logos', 'option' ) ) {
 						the_row();
 
 						$foto = get_sub_field( 'logo_afbeelding' );
