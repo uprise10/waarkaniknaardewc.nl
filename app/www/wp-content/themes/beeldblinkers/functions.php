@@ -133,6 +133,8 @@ if (!function_exists('ibpix_setup')) :
 		    return $html !== '' ? '<div class="video-wrapper"><div class="embed-container">' . $html . '</div></div>' : '';
 	    } );
 
+	    add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
+
     }
 endif; // ibpix_setup
 add_action('after_setup_theme', 'ibpix_setup');
@@ -390,3 +392,101 @@ add_action( 'pre_get_posts', function( \WP_Query $query ) {
 add_filter( 'gform_submit_button', function($button, $form) {
 	return $button . '<p class="privacy-statement">Lees hier onze <a href="' . get_home_url( null, 'privacyverklaring/' ) . '" target="_blank">privacyverklaring</a>';
 }, 10, 2 );
+
+
+add_shortcode( 'doneren', function($atts, $content = '') {
+	$atts = shortcode_atts( array(), $atts );
+
+	ob_start();
+	?>
+	<section class="widget-donation-module">
+		<?php
+		$donation_block_title              = 'Steun de Maag Lever Darm Stichting. <span>Doneer eenmalig of word donateur.</span>';
+		$donation_block_segment            = 4049;
+		$donation_block_datatag            = 'wkindwc-donatie-module';
+		$donation_block_default_period     = 'eenmalig';
+
+		$donate_options = [
+			'eenmalig'    => [
+				'label'   => 'Eenmalig',
+				'amounts' => [ 50, 25, 10, 'anders' ],
+				'default' => 50,
+			],
+			'maandelijks' => [
+				'label'   => 'Maandelijks',
+				'amounts' => [ 10, 8, 5, 'anders' ],
+				'default' => 8,
+			],
+		];
+		$checked_before = false;
+		?>
+		<form class="donation-module" action="https://www.mlds.nl/doneren/uw-gegevens/" method="post" data-tag="<?php echo esc_attr( $donation_block_datatag ); ?>" target="_blank">
+			<h3 class="donation-module__heading" data-tag="<?php echo esc_attr( $donation_block_datatag ); ?>"><?php echo $donation_block_title; ?></h3>
+			<div class="donation-module__wrapper" data-tag="<?php echo esc_attr( $donation_block_datatag ); ?>">
+				<div class="donation-module__wrapper__item" data-tag="<?php echo esc_attr( $donation_block_datatag ); ?>">
+					<?php foreach( $donate_options as $key => $option ) { ?>
+						<?php
+						$active_period = empty( $donation_block_default_period ) || ( $donation_block_default_period === $key );
+						?>
+						<ul class="donation-module__options donation-module__options--values <?php echo ( true == $active_period ) ? 'donation-module__options--active' : ''; ?>" id="donation-module_options--<?php echo $key; ?>" data-tag="<?php echo esc_attr( $donation_block_datatag ); ?>">
+							<?php
+							foreach ( $option['amounts'] as $index => $amount ) {
+								$checked = ( false === $checked_before && $amount == $option['default'] );
+								if( 'maandelijks' == $active_period && $amount == $option['default'] ) {
+									$checked = true;
+								}
+								$amount_label = '&euro; ' . $amount;
+								$is_other = ( $index == count( $option['amounts'] ) - 1 );
+								if( $is_other ) {
+									$amount_label = $amount;
+								}
+								?>
+								<li class="donation-module__options__option <?php echo $is_other ? '' : ''; ?>" data-tag="<?php echo esc_attr( $donation_block_datatag ); ?>">
+									<label data-tag="<?php echo esc_attr( $donation_block_datatag ); ?>">
+										<input type="radio" name="amount" class="donation-module__options__option__input <?php echo $is_other ? 'other active' : ''; ?>" value="<?php echo $amount; ?>" <?php echo ( $checked ) ? 'checked="checked"' : ''; ?> data-tag="<?php echo esc_attr( $donation_block_datatag ); ?>">
+										<div class="donation-module__options__option__label" data-tag="<?php echo esc_attr( $donation_block_datatag ); ?>"><?php echo $amount_label; ?></div>
+									</label>
+
+									<?php if( $is_other ) { ?>
+										<div class="donation-module__options__option__other" data-tag="<?php echo esc_attr( $donation_block_datatag ); ?>">
+											<?php if( 'eenmalig' == $key ) { ?><input type="number" min="5" class="money-input" name="other-amount" id="donation-module-other-amount" data-tag="<?php echo esc_attr( $donation_block_datatag ); ?>"><?php } ?>
+											<span class="value-holder" data-tag="<?php echo esc_attr( $donation_block_datatag ); ?>">€</span>
+										</div>
+									<?php } ?>
+								</li>
+							<?php } ?>
+						</ul>
+						<?php $checked_before = true; ?>
+					<?php } ?>
+				</div>
+				<div class="donation-module__wrapper__item" data-tag="<?php echo esc_attr( $donation_block_datatag ); ?>">
+					<ul class="donation-module__options donation-module__options--periods" data-tag="<?php echo esc_attr( $donation_block_datatag ); ?>">
+						<?php
+						foreach( $donate_options as $key => $option ) {
+							$checked = ( $donation_block_default_period === strtolower( $option['label'] ) );
+
+							echo '<li class="donation-module__options__option" data-tag="' . esc_attr( $donation_block_datatag ) . '"><label data-tag="' . esc_attr( $donation_block_datatag ) . '">';
+							echo '<input type="radio" name="period" class="donation-module__options__option__input" value="' . strtolower( $option['label'] ) . '" ' . ( $checked ? 'checked="checked"' : '' ) . ' data-target="' . $key . '" data-default="' . $option['default'] . '" data-tag="' . esc_attr( $donation_block_datatag ) . '">';
+							echo '<div class="donation-module__options__option__label" data-tag="<?php echo esc_attr( $donation_block_datatag ); ?>">'. $option['label'] . '</div>';
+							echo '</label></li>';
+						}
+						?>
+					</ul>
+
+					<input type="hidden" name="source" value="onlinedonatie" data-tag="<?php echo esc_attr( $donation_block_datatag ); ?>">
+					<input type="hidden" name="segment" value="<?php echo esc_attr( $donation_block_segment ); ?>" data-tag="<?php echo esc_attr( $donation_block_datatag ); ?>">
+					<button type="submit" class="donation-module__button" id="validate-button" data-tag="<?php echo esc_attr( $donation_block_datatag ); ?>">Doneer</button>
+					<div class="validation_message" data-tag="<?php echo esc_attr( $donation_block_datatag ); ?>">Het bedrag moet minimaal €5,- zijn.</div>
+				</div>
+			</div>
+
+		</form>
+	</section>
+	<?php
+
+	$output = ob_get_contents();
+	ob_clean();
+	ob_flush();
+
+	return $output;
+});
