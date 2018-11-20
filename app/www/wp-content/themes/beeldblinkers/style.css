@@ -5028,10 +5028,11 @@ body.nav-active .close_nav {
       content: "";
       display: table;
       clear: both; }
-@media screen and (max-width: 30em) {
+@media screen and (max-width: 60em) {
       .donation-module__options {
         -ms-flex-wrap: wrap;
-            flex-wrap: wrap; } }
+            flex-wrap: wrap;
+        margin: 0 0 10px 0; } }
 .donation-module__options--periods, .donation-module__options--active {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -5169,6 +5170,7 @@ body.nav-active .close_nav {
     color: #fff;
     text-align: center;
     text-decoration: none !important;
+    margin-left: 20px;
     border: 0;
     background: #da291c;
     border-radius: 4px;
