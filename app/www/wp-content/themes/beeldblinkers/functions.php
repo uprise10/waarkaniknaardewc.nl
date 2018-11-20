@@ -385,3 +385,8 @@ add_action( 'pre_get_posts', function( \WP_Query $query ) {
 
 	return $query;
 });
+
+
+add_filter( 'gform_submit_button', function($button, $form) {
+	return $button . '<p class="privacy-statement">Lees hier onze <a href="' . get_home_url( null, 'privacyverklaring/' ) . '" target="_blank">privacyverklaring</a>';
+}, 10, 2 );
