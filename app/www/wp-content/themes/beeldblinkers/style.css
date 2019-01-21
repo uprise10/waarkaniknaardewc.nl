@@ -5170,7 +5170,6 @@ body.nav-active .close_nav {
     color: #fff;
     text-align: center;
     text-decoration: none !important;
-    margin-left: 20px;
     border: 0;
     background: #da291c;
     border-radius: 4px;
@@ -5183,7 +5182,7 @@ body.nav-active .close_nav {
     -webkit-appearance: none;
        -moz-appearance: none;
             appearance: none; }
-@media screen and (max-width: 30em) {
+@media screen and (max-width: 60em) {
       .donation-module__button {
         margin-left: 20px; } }
 .donation-module__button i {
@@ -5930,9 +5929,35 @@ body.nav-active .inner {
         position: absolute;
         top: -30px;
         left: 20px; } }
-article img {
-  width: 100%;
-  height: auto; }
+.alignleft {
+  float: left;
+  margin: 0 15px 12px;
+  margin: 0 15px 0.75rem; }
+.alignright {
+  float: right;
+  margin: 0 0 12px 15px;
+  margin: 0 0 0.75rem 15px; }
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+figure figcaption {
+  font-style: italic;
+  font-size: .9em; }
+@media screen and (max-width: 30em) {
+  figure.alignleft, figure.alignright {
+    float: none;
+    margin: 0.75rem 0; } }
+figure img {
+  display: block;
+  height: auto;
+  max-width: 100%; }
+figure.alignleft {
+  float: left;
+  margin: 0 5px 0 0; }
+figure.alignright {
+  float: right;
+  margin: 0 0 0 5px; }
 .protected_page {
   display: block;
   position: fixed;

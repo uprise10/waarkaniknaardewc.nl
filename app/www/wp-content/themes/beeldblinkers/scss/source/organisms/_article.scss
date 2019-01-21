@@ -1,6 +1,45 @@
-article {
+.alignleft {
+    float: left;
+    margin: 0 15px rhythm(.5);
+}
+
+.alignright {
+    float: right;
+    margin: 0 0 rhythm(.5) 15px;
+}
+
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+figure {
+    figcaption {
+        font-style: italic;
+        font-size: .9em;
+    }
+    @media screen and (max-width: $breakpoint-small) {
+        &.alignleft,
+        &.alignright {
+            float: none;
+            margin: rhythm(.5) 0;
+        }
+    }
+
     img {
-        width: 100%;
+        display: block;
         height: auto;
+        max-width: 100%;
+    }
+
+    &.alignleft {
+        float: left;
+        margin: 0 5px 0 0;
+    }
+
+    &.alignright {
+        float: right;
+        margin: 0 0 0 5px;
     }
 }

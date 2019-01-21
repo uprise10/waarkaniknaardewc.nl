@@ -254,7 +254,6 @@ $blue-8: #F1F5FA;
         color: #fff;
         text-align: center;
         text-decoration: none !important;
-        margin-left: 20px;
         border: 0;
         background: #da291c;
         border-radius: 4px;
@@ -263,7 +262,7 @@ $blue-8: #F1F5FA;
         user-select: none;
         appearance: none;
 
-        @media screen and (max-width: $breakpoint-small) {
+        @media screen and (max-width: $breakpoint-large) {
             margin-left: 20px;
         }
 
